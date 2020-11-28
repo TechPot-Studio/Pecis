@@ -1,18 +1,18 @@
 {
-  "name": "peb",
-  "title": "Peb.js",
-  "version": "4.0.0-rc.1",
-  "main": "dist/peb.min.js",
+  "name": "pecis",
+  "title": "Pecis",
+  "version": "0.0.1",
+  "main": "dist/pecis.min.js",
   "typings": "peb.d.ts",
   "description": "Peb.js makes JS easier",
   "author": "TechPot Studio <techpot-studio@yandex.com>",
   "keywords": [
     "techpot",
     "javascript",
-    "js",
-    "peb",
+    "library",
+    "pecis",
     "browser",
-    "library"
+    "web"
   ],
   "bugs": {
     "email": "techpot-studio@yandex.com",
@@ -34,14 +34,11 @@
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0"
   },
-  "directories": {
-    "doc": "docs"
-  },
   "engines": {
     "node": ">14.0.0"
   },
   "scripts": {
-    "build:minify": "terser dist/peb.min.js -c toplevel=true -m -o dist/peb.min.js",
+    "build:minify": "terser dist/pecis.min.js -c toplevel=true -m -o dist/pecis.min.js",
     "build:webpack": "webpack",
     "build": "npm run build:webpack && npm run build:minify"
   },

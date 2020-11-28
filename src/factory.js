@@ -1,45 +1,45 @@
-import {pebVersion} from './utils/variables';
+import {VERSION} from './utils/variables';
 import errors from './utils/errors';
 import elementOperator from './utils/elementOperator';
 import ElementManager from './utils/ElementManager';
 
 export default function factory(window) {
     'use strict';
-    function peb() {
-        this.name = 'peb';
-        console.info('Peb.js 3.1.0 is available!');
+    function pecis() {
+        this.name = 'Pecis';
+        console.info(`Pecis ${VERSION} is available!```);
     }
 
-    peb.version = pebVersion;
-    peb.peb = peb.version;
+    pecis.version = VERSION;
+    pecis.peb = pecis.version;
 
     // Error type
 
-    peb.PebError = errors.PebError;
-    peb.PebExtensionError = errors.PebExtensionError;
-    peb.PebMissingEnvironmentError = errors.PebMissingEnvironmentError;
-    peb.PebMultipleElementError = errors.PebMultipleElementError;
-    peb.PebMissingParameterError = errors.PebMissingParameterError;
+    pecis.PecisBaseError = errors.PecisBaseError;
+    pecis.ExtensionError = errors.ExtensionError;
+    pecis.MissingEnvironmentError = errors.MissingEnvironmentError;
+    pecis.MultipleElementError = errors.MultipleElementError;
+    pecis.MissingParameterError = errors.MissingParameterError;
 
     let emptyArray = [null];
 
-    peb.FIRST_ITEM = 0
-    peb.GLOBAL = window;
-    peb.UA = window.navigator ? navigator.userAgent : null
+    pecis.FIRST_ITEM = 0
+    pecis.GLOBAL = window;
+    pecis.UA = window.navigator ? navigator.userAgent : null
 
-    peb.reqArg = (name) => {
-        throw new errors.PebMissingParameterError(name ? 'Missing parameter ' + name : 'Missing required parameters');
+    pecis.reqArg = (name) => {
+        throw new errors.MissingParameterError(name ? 'Missing parameter ' + name : 'Missing required parameters');
     };
 
     if (window.document && document instanceof Document) {
-        customElements.define('peb-trans', class PebTransElement extends HTMLElement {
+        customElements.define('pecis-trans', class PebTransElement extends HTMLElement {
             constructor() {
                 super();
             }
         });
     }
 
-    peb.TranslationTable = class TranslationTable {
+    pecis.TranslationTable = class TranslationTable {
         constructor(table) {
             if (typeof (table) === 'object') {
                 this.tabel = table;
@@ -68,7 +68,7 @@ export default function factory(window) {
          * @param {string} lang
          */
         translation(lang) {
-            document.querySelectorAll('peb-trans').forEach(function (element) {
+            document.querySelectorAll('pecis-trans').forEach(function (element) {
                 element.innerHTML = this.table[lang][element.getAttribute('word')];
             });
         }
@@ -78,9 +78,9 @@ export default function factory(window) {
      * @param  {number[] | Array<number>} values Values to sum
      * @return {number}
      */
-    peb.sum = function (...values) {
+    pecis.sum = function (...values) {
         if (values[0] instanceof Array) {
-            return peb.sum(values[0]);
+            return pecis.sum(values[0]);
         } else {
             let result = 0;
             values.forEach((value) => {
@@ -90,7 +90,7 @@ export default function factory(window) {
         }
     };
 
-    peb.getGlobal = function () {
+    pecis.getGlobal = function () {
         // globalThis is read-only
         return window;
     };
@@ -101,7 +101,7 @@ export default function factory(window) {
      * @param {object} attr
      * @param {...(HTMLElement | string)} child
      */
-    peb.createElement = function (name, attr, ...child) {
+    pecis.createElement = function (name, attr, ...child) {
         let is = name instanceof Array,
             create = document.createElement,
             result = is ? create(name[0], {is: name[1]}) : create(name);
@@ -114,7 +114,7 @@ export default function factory(window) {
      * Convert HTMLElement to operable element
      * @param {HTMLElement | Node} element
      */
-    peb.ElementManager = ElementManager;
+    pecis.ElementManager = ElementManager;
 
     /**
      * Operate the DOM with the smallest possible code
@@ -125,7 +125,7 @@ export default function factory(window) {
      * @param {number} index Index In the List
      * @return {ElementManager}
      */
-    peb.sel = peb.select = function (selector, index) {
+    pecis.sel = pecis.select = function (selector, index) {
         if (typeof selector === 'string') {
             if (index === undefined) {
                 return new ElementManager(document.querySelectorAll(selector), selector);
@@ -142,7 +142,7 @@ export default function factory(window) {
      * Select a element
      * @param {string} selector Query Selector of the element
      */
-    peb.query = function (selector) {
+    pecis.query = function (selector) {
         return document.querySelectorAll(selector);
     }
 
@@ -150,7 +150,7 @@ export default function factory(window) {
      * Send ajax requests
      * @param {object} config
      */
-    peb.ajax = function (config) {
+    pecis.ajax = function (config) {
         let request = new XMLHttpRequest()
             , arg = config;
         arg.success = config.success || this.noop;
@@ -177,16 +177,16 @@ export default function factory(window) {
      * Print to console
      * @param {any[]} data
      */
-    peb.log = function (...data) {
+    pecis.log = function (...data) {
         console.log(...data);
     };
-    peb.log.info = peb.log;
+    pecis.log.info = pecis.log;
 
     /**
      * Print to console
      * @param {any[]} data
      */
-    peb.log.error = function (...data) {
+    pecis.log.error = function (...data) {
         console.error(...data);
     };
 
@@ -194,14 +194,14 @@ export default function factory(window) {
      * Print to console
      * @param {any[]} data
      */
-    peb.log.warn = function (...data) {
+    pecis.log.warn = function (...data) {
         console.error(...data);
     };
 
     /**
      * Clear console
      */
-    peb.log.clear = function () {
+    pecis.log.clear = function () {
         console.clear();
     };
 
@@ -210,7 +210,7 @@ export default function factory(window) {
      * @param {any} tabularData
      * @param {ReadonlyArray<string>} properties
      */
-    peb.log.table = function (tabularData, properties) {
+    pecis.log.table = function (tabularData, properties) {
         console.table(tabularData, properties)
     }
 
@@ -220,7 +220,7 @@ export default function factory(window) {
      * @param {boolean} isCollapsed
      * @param {Function} run
      */
-    peb.log.group = function (label, isCollapsed = false, run = undefined) {
+    pecis.log.group = function (label, isCollapsed = false, run = undefined) {
         if (isCollapsed) {
             console.groupCollapsed(label);
         } else {
@@ -236,7 +236,7 @@ export default function factory(window) {
     /**
      * Close a group
      */
-    peb.log.groupEnd = function () {
+    pecis.log.groupEnd = function () {
         console.groupEnd();
     }
 
@@ -244,7 +244,7 @@ export default function factory(window) {
      * Trace function call
      * @param {any[]} data
      */
-    peb.log.trace = function (...data) {
+    pecis.log.trace = function (...data) {
         console.trace(...data);
     }
 
@@ -253,7 +253,7 @@ export default function factory(window) {
      * @param {boolean} condition
      * @param {any[]} data
      */
-    peb.log.assert = function (condition, ...data) {
+    pecis.log.assert = function (condition, ...data) {
         console.assert(condition, ...data)
     }
 
@@ -262,7 +262,7 @@ export default function factory(window) {
      * @param {string} str
      * @return {string}
      */
-    peb.upperCase = function (str) {
+    pecis.upperCase = function (str) {
         return str.toUpperCase();
     };
     /**
@@ -270,7 +270,7 @@ export default function factory(window) {
      * @param {string} str
      * @return {string}
      */
-    peb.lowerCase = function (str) {
+    pecis.lowerCase = function (str) {
         return str.toLowerCase();
     };
 
@@ -279,7 +279,7 @@ export default function factory(window) {
      * @param {string} str
      * @return {string}
      */
-    peb.camelCase = function (str) {
+    pecis.camelCase = function (str) {
         return str.replace(/[ -]./g, (word) => {
             return word.replace(/[ -]/g, '').toUpperCase();
         });
@@ -289,7 +289,7 @@ export default function factory(window) {
      * Get a class of value
      * @param {any} obj
      */
-    peb.classof = function (obj) {
+    pecis.classof = function (obj) {
         if (obj && obj.constructor && obj.constructor.toString()) {
             if (obj.constructor.name) {
                 return obj.constructor.name;
@@ -313,17 +313,17 @@ export default function factory(window) {
      * Contains `123` `"123"` `1.23` `"1.23"` `.23` `".23"` `0xff00` `"0xf3"`
      * @param {string | number} obj
      */
-    peb.isNumeric = function (obj) {
+    pecis.isNumeric = function (obj) {
         return !isNaN(obj - 0);
     };
 
     /**
      * Sleep time
-     * `peb.sleep(time).then(Fn)` = setTimeOut
+     * `pecis.sleep(time).then(Fn)` = setTimeOut
      * `await sleep(time)` is normal sleep time
      * @param {number} time
      */
-    peb.sleep = async function (time) {
+    pecis.sleep = async function (time) {
         return new Promise(resolve => {
             setTimeout(resolve, time);
         });
@@ -334,7 +334,7 @@ export default function factory(window) {
      * @param {object} obj Object for each
      * @param {Function} callbackFn call back function
      */
-    peb.forEach = function (obj, callbackFn) {
+    pecis.forEach = function (obj, callbackFn) {
         Object.keys(obj).forEach((value, _, object) => {
             callbackFn(object[value], value, object);
         });
@@ -346,7 +346,7 @@ export default function factory(window) {
      * @param {any} obj
      * @param {boolean} returnIndex
      */
-    peb.inArray = function (arr, obj, returnIndex = false) {
+    pecis.inArray = function (arr, obj, returnIndex = false) {
         if (returnIndex) {
             return arr.indexOf(obj) > -1 ? arr.indexOf(obj) : null;
         } else {
@@ -360,14 +360,14 @@ export default function factory(window) {
      * @param {number} start
      * @param {number} end
      */
-    peb.slice = function (obj, start, end) {
+    pecis.slice = function (obj, start, end) {
         return obj.slice(start, end || start);
     };
 
     /**
      * Get search string data
      */
-    peb.getSearchData = function (data) {
+    pecis.getSearchData = function (data) {
         if (window.location) {
             let str = data || location.search;
 
@@ -381,39 +381,39 @@ export default function factory(window) {
     /**
      * Wrap URL
      */
-    peb.navigate = function (url, target = '_self') {
+    pecis.navigate = function (url, target = '_self') {
         if (window.window) {
             window.opener = null;
             window.open(url, target);
         }
     };
 
-    peb.noop = function () {
+    pecis.noop = function () {
         // NOOP
     };
 
     /**
      * Multiple String
      */
-    peb.stringTimes = function (string, times, connector = '') {
+    pecis.stringTimes = function (string, times, connector = '') {
         return new Array(times).fill(string).join(connector);
     };
 
     /**
      * Throw error
      */
-    peb.error = function (message, type) {
+    pecis.error = function (message, type) {
         let errorType = type || Error;
         throw new errorType(message);
     };
 
     // Common function integration
-    peb.parseJson = JSON.parse;
-    peb.stringifyJson = JSON.stringify;
-    peb.now = Date.now;
-    peb.insert = emptyArray.push.call;
+    pecis.parseJson = JSON.parse;
+    pecis.stringifyJson = JSON.stringify;
+    pecis.now = Date.now;
+    pecis.insert = emptyArray.push.call;
 
-    peb.SearchParams = window.URLSearchParams;
+    pecis.SearchParams = window.URLSearchParams;
 
-    return peb;
+    return pecis;
 }

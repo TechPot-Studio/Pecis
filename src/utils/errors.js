@@ -1,42 +1,42 @@
-class PebError extends Error {
+class PecisBaseError extends Error {
     constructor(message) {
         super(message);
-        this.name = 'PebBasicError';
+        this.name = 'PecisBasicError';
     }
 }
-export class PebExtensionError extends PebError {
+export class ExtensionError extends PecisBaseError {
     constructor(message) {
         super(message);
-        this.name = 'PebExtensionError';
-    }
-}
-
-export class PebMissingEnvironmentError extends PebError {
-    constructor(message) {
-        super(message);
-        this.name = 'PebMissingEnvironmentError'
+        this.name = 'PecisExtensionError';
     }
 }
 
-export class PebMissingParameterError extends PebError {
+export class MissingEnvironmentError extends PecisBaseError {
+    constructor(message) {
+        super(message);
+        this.name = 'PecisMissingEnvironmentError'
+    }
+}
+
+export class MissingParameterError extends PecisBaseError {
     constructor(message) {
         super(message)
-        this.name = 'PebMissingParameterError';
+        this.name = 'PecisMissingParameterError';
     }
 }
 
-export class PebMultipleElementError extends PebError {
+export class MultipleElementError extends PecisBaseError {
     constructor(message) {
         super(message);
-        this.name = 'PebMultipleElementError'
+        this.name = 'PecisMultipleElementError'
     }
 }
 
 export default {
-    PebError,
-    PebExtensionError,
-    PebMissingEnvironmentError,
-    PebMissingParameterError,
-    PebMultipleElementError
+    PecisBaseError: PecisBaseError,
+    ExtensionError,
+    MissingEnvironmentError,
+    MissingParameterError,
+    MultipleElementError
 }
 

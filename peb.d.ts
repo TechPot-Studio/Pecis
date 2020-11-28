@@ -36,10 +36,10 @@ declare module 'peb' {
     /* namespace peb */
 
     /**
-     * A namespace of basic peb.js method peb
+     * A namespace of basic pecis.js method peb
      */
     namespace peb {
-        /** Version of peb.js */
+        /** Version of pecis.js */
         const version: string;
 
         const FIRST_ITEM: 0;

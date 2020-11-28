@@ -2,10 +2,10 @@ const path = require("path");
 
 module.exports = {
     mode: "production",
-    entry: './src/peb.js',
+    entry: './src/pecis.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'peb.min.js'
+        filename: 'pecis.min.js'
     },
     module: {
         rules: [

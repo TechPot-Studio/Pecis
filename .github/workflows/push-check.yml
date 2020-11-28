@@ -1,0 +1,47 @@
+name: Push Check
+
+on:
+  push:
+    branches: [master]
+  pull_request: 
+    branches: [master]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  nodejs-check:
+    runs-on: ubuntu-latest
+    name: Node.js and dependencies check
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm i
+      - run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Minified File
+          path: dist/peb.min.js
+
+
+  check-quality:
+    runs-on: ubuntu-latest
+    name: Codacy Analysis
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run codacy-analysis-cli
+        uses: codacy/codacy-analysis-cli-action@1.1.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          # Codacy's API URL, to retrieve your remote Codacy configuration
+          codacy-api-base-url: # optional
+          # The name of the tool to analyze the code
+          tool: ESLint
+          # Maximum time each tool has to execute
+          tool-timeout: # optional
+          # Upload analysis results to Codacy
+          upload: # optional
+          # Fail the analysis if any tool fails to run
+          fail-if-incomplete: # optional
