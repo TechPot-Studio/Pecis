@@ -1,0 +1,9 @@
+.github/
+docs/
+dist/
+*.md
+*.json
+LICENSE
+*.d.ts
+*.config.js
+src/scss
