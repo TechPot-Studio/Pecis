@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./assets/Pecis.png" alt="Icon" />
+<img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/Pecis/assets/Pecis.png" alt="Icon" />
 </p>
 
 ---
