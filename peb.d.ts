@@ -80,12 +80,12 @@ declare module 'peb' {
             /**
              * Set translation table
              */
-            set set(table: TranslationTable)
+            set(table: TranslationTable)
 
             /**
              * Get table value
              */
-            get get(): object
+            get(): object
 
             /**
              * Translation by language
