@@ -2,6 +2,8 @@ import {VERSION} from './utils/variables';
 import errors from './utils/errors';
 import elementOperator from './utils/elementOperator';
 import ElementManager from './utils/ElementManager';
+import TranslationTable from "./utils/TranslationTable";
+import defineProperties from "./utils/propertiesDefiner";
 
 export default function factory(window) {
     'use strict';
@@ -39,40 +41,16 @@ export default function factory(window) {
         });
     }
 
-    pecis.TranslationTable = class TranslationTable {
-        constructor(table) {
-            if (typeof (table) === 'object') {
-                this.tabel = table;
-            }
-        }
+    pecis.TranslationTable = TranslationTable;
 
-        /**
-         * Set value
-         * @param {object} newTable
-         */
-        set set(newTable) {
-            Object.keys(newTable).forEach(function (lang) {
-                (newTable[lang]).forEach(function (word) {
-                    this.tabel[lang][word] = newTable[lang][word];
-                });
-            });
-            return this;
-        }
+    /**
+     * Set the function to run when use directly `pecis()`
+     * @param {number} code
+     */
+    pecis.setDefault = function (code) {
+        defineProperties(pecis, 'DEFAULT_FUNC', code, false, false, false)
+    }
 
-        get get() {
-            return this.tabel;
-        }
-
-        /**
-         * Translation
-         * @param {string} lang
-         */
-        translation(lang) {
-            document.querySelectorAll('pecis-trans').forEach(function (element) {
-                element.innerHTML = this.table[lang][element.getAttribute('word')];
-            });
-        }
-    };
     /**
      * Quick sum items
      * @param  {number[] | Array<number>} values Values to sum
@@ -90,7 +68,7 @@ export default function factory(window) {
         }
     };
 
-    pecis.getGlobal = function () {
+    pecis.global = function () {
         // globalThis is read-only
         return window;
     };
