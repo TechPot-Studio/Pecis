@@ -26,14 +26,10 @@
   <a title="ECMAScript Version"><img src="https://img.shields.io/static/v1?label=ECMAScript%20version&message=6&color=informational&logo=JavaScript&style=flat-square&logoColor=white" /></a>
 </p>
 
-Looking for README in other languages?<br />
-[简体中文](README.zh.md) | English
-
 ## About
 ECMAScript 6 lightweight API that makes JS web development easier. Make the code faster, more efficient, easier to read, and compatible with other parts of the API. Created by TechPot Studio, some methods are borrowed from jQuery, and basically conform to the writing habits of the public.
-  
-Microsoft's support for Internet Explorer has ended. We will also discontinue its compatible code since `v3.0.0`.
 
+Support for ES5: *Not tested yet*
 ### Naming
 The French language of the web is *le lacis*, and this project originally called Peb (Pot + Web) , and Pecis and Pieces are homophonic.
 
@@ -61,16 +57,15 @@ const pecis = require('pecis');
 ```html
 <script src="//unpkg.com/pecis" type="module"></script>
 ```
-`type="module"` is only applicable after `v3.1.0`
 
 And, we allowed download source code.
 ## Browser Support
 Number is the **least** version it supports
+
 | Browser | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/chrome.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/firefox.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/safari.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/edge.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/opera.svg" width="30" /> |
 |---: | :---: | :---: | :---: | :---: | :---: |
 | **Full Support** | 54 | 63 | 10.1 | 79 | 41 |
 
-Go to the function documentation to view the specific supported browsers of the function  
 **The source of this information: [*developer.mozilla.org*](//developer.mozilla.org)**
 
 ## Main Contributor
