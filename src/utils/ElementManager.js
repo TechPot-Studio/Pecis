@@ -4,6 +4,10 @@ export default class ElementManager {
     /** @type {number} */
     length;
 
+    static create(element) {
+        return new ElementManager(element)
+    }
+
     constructor(origin, selector) {
         this.element = origin;
         this.length = origin.length || 1;
