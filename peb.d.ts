@@ -334,11 +334,13 @@ declare module 'peb' {
          *
          * @param selector Css selector of the element
          * @param index Index in the list
+         * @example
+         * pecis.sel('div.class#id[attribute=value]:state');
          */
         function select(selector: string, index?: number): ElementManager
 
         /**
-         * Convert HTMLElement into peb RElement or RElementsCollection.
+         * Manage element
          */
         function select(element: HTMLElement|HTMLCollection|NodeList): ElementManager
 
@@ -349,11 +351,13 @@ declare module 'peb' {
          *
          * @param selector Css selector of the element
          * @param index Index in the list
+         * @example
+         * pecis.sel('div.class#id[attribute=value]:state');
          */
         function sel(selector: string, index?: number): ElementManager
 
         /**
-         * Convert HTMLElement into peb RElement or RElementsCollection.
+         * Manage element
          *
          * **As known as `select` function**
          */

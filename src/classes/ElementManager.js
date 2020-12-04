@@ -1,3 +1,7 @@
+/**
+ * Convert HTMLElement to operable element
+ * @param {HTMLElement | Node} element
+ */
 export default class ElementManager {
     /** @type {HTMLElement | HTMLCollection | Node | NodeList} */
     element;

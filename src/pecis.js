@@ -7,9 +7,7 @@
  */
 
 import './scss/styles.scss';
-import factory from './factory';
-
-const pecis = factory(globalThis)
+import pecis from './factory';
 
 if (typeof module === 'object' && typeof module.exports === 'object') {
     // CommonJS
