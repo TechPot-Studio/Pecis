@@ -35,13 +35,5 @@ jobs:
         uses: codacy/codacy-analysis-cli-action@1.1.0
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          # Codacy's API URL, to retrieve your remote Codacy configuration
-          codacy-api-base-url: # optional
-          # The name of the tool to analyze the code
           tool: ESLint
-          # Maximum time each tool has to execute
-          tool-timeout: # optional
-          # Upload analysis results to Codacy
-          upload: # optional
-          # Fail the analysis if any tool fails to run
-          fail-if-incomplete: # optional
+          upload: true
