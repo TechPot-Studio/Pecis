@@ -1,5 +1,5 @@
 import pecis from "./core/Pecis";
-import {VERSION} from './utils/variables';
+import vars from './utils/variables';
 import errors from './utils/errors';
 import ElementManager from './classes/ElementManager';
 import TranslationTable from './classes/TranslationTable';
@@ -18,8 +18,10 @@ import forEach from './methods/forEach';
 import query from './frontend/query';
 import sleep from './manipulate/sleep';
 import stringOperator from './utils/stringOperator';
+import PecisTransElement from './elements/PecisTransElement';
+import isNumeric from './math/isNumeric';
 
-pecis.version = VERSION;
+pecis.version = vars.ver;
 pecis.pecis = pecis.version;
 
 let emptyArray = [null];
@@ -29,11 +31,7 @@ pecis.GLOBAL = window;
 pecis.UA = window.navigator ? navigator.userAgent : null
 
 if (window.document && document instanceof Document) {
-    customElements.define('pecis-trans', class PebTransElement extends HTMLElement {
-        constructor() {
-            super();
-        }
-    });
+    customElements.define('pecis-trans', PecisTransElement);
 }
 
 /**
@@ -43,16 +41,6 @@ if (window.document && document instanceof Document) {
 pecis.setDefault = function (code) {
     defineProperties(pecis, 'DEFAULT_FUNC', code, false, false, false)
 }
-
-/**
- * Return a boolean of is obj a number
- * like `123` `"123"` `1.23` `"1.23"` `.23` `".23"` `0xff00` `"0xf3"`
- * @param {string | number} obj
- */
-pecis.isNumeric = function (obj) {
-    return !isNaN(obj - 0);
-};
-
 
 pecis.global = window;
 
@@ -72,6 +60,7 @@ pecis.ElementManager = ElementManager;
 pecis.sel = pecis.select = select;
 pecis.slice = slice;
 pecis.sleep = sleep;
+pecis.isNumeric = isNumeric;
 pecis.log = log;
 pecis.forEach = forEach;
 pecis.getSearchData = getSearchData;
