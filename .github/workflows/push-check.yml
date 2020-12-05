@@ -11,12 +11,12 @@ on:
 jobs:
   nodejs-check:
     runs-on: ubuntu-latest
-    name: Node.js and dependencies check
+    name: Packages and build check
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - run: npm i
       - run: npm run build
       - uses: actions/upload-artifact@v2
@@ -36,4 +36,3 @@ jobs:
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           tool: ESLint
-          upload: true
