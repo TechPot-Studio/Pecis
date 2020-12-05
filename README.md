@@ -79,4 +79,6 @@ Number is the **least** version it supports
 
 ---
 
-<img src="./assets/studio_banner.png" alt="Studio banner" />
+<p align="right">
+<img width="200" src="https://cdn.jsdelivr.net/gh/TechPot-Studio/Pecis/assets/studio_banner.png" alt="Studio banner" />
+</p>
