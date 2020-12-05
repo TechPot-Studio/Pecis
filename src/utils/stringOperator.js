@@ -32,4 +32,4 @@ export default {
     stringTimes(string, times, connector = '') {
         return new Array(times).fill(string).join(connector);
     }
-}
+};

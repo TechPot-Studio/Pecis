@@ -1,4 +1,4 @@
-import errors from "../utils/errors";
+import errors from '../utils/errors';
 
 /**
  * Get search string data

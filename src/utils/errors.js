@@ -1,31 +1,31 @@
-class PecisBaseError extends Error {
+class BaseError extends Error {
     constructor(message) {
         super(message);
         this.name = 'PecisBasicError';
     }
 }
-export class ExtensionError extends PecisBaseError {
+export class ExtensionError extends BaseError {
     constructor(message) {
         super(message);
         this.name = 'PecisExtensionError';
     }
 }
 
-export class MissingEnvironmentError extends PecisBaseError {
+export class MissingEnvironmentError extends BaseError {
     constructor(message) {
         super(message);
         this.name = 'PecisMissingEnvironmentError'
     }
 }
 
-export class MissingParameterError extends PecisBaseError {
+export class MissingParameterError extends BaseError {
     constructor(message) {
         super(message)
         this.name = 'PecisMissingParameterError';
     }
 }
 
-export class MultipleElementError extends PecisBaseError {
+export class MultipleElementError extends BaseError {
     constructor(message) {
         super(message);
         this.name = 'PecisMultipleElementError'
@@ -33,7 +33,7 @@ export class MultipleElementError extends PecisBaseError {
 }
 
 export default {
-    PecisBaseError: PecisBaseError,
+    BaseError,
     ExtensionError,
     MissingEnvironmentError,
     MissingParameterError,

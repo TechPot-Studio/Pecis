@@ -49,21 +49,21 @@ declare module 'peb' {
          * Peb basically error type.
          * All other peb error are extending this.
          */
-        class PebError extends Error {
+        class BaseError extends Error {
             constructor(message: string)
         }
 
         /**
          * Throw in case of required a valid object but value is none
          */
-        class PebNullObjectError extends PebError {
+        class NullObjectError extends BaseError {
             constructor(message: string)
         }
 
         /**
          * Throw in case of missing node.js or browser environment
          */
-        class PebMissingEnvironmentError extends PebError {
+        class MissingEnvironmentError extends BaseError {
             constructor(message: string)
         }
 

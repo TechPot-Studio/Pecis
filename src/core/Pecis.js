@@ -1,7 +1,7 @@
-import {VERSION} from "../utils/variables";
+import vars from '../utils/variables'
 
 function pecis() {
-    console.info(`Pecis ${VERSION} is available`);
+    console.info(`Pecis ${vars} is available`);
 }
 
 export default pecis;

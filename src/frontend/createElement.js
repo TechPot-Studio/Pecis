@@ -1,4 +1,4 @@
-import elementOperator from "../utils/elementOperator";
+import elementOperator from '../utils/elementOperator';
 
 /**
  * Create an element
