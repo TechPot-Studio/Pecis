@@ -1,5 +1,6 @@
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/Pecis/assets/Pecis.png" alt="Icon" />
+<img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/Pecis/assets/Pecis.png" alt="Icon" 
+width="300"/>
 </p>
 
 ---
@@ -71,11 +72,11 @@ Number is the **least** version it supports
 ## Main Contributor
 [@TechPot-Studio/pecis](https://github.com/orgs/TechPot-Studio/teams/pecis)
 
-| Name | Contributes |
-| :---: | :---: |
-| [TheColdPot](https://github.com/TheColdPot) | 💻🐛📖🎨🤔🗃✏📦 |
-
 ## Special Thanks to
 ### Software Support
 [WebStorm](https://www.jetbrains.com/webstorm/)  
 [Visual Studio Code](https://visualstudio.com)   
+
+---
+
+<img src="./assets/studio_banner.png" alt="Studio banner" />
