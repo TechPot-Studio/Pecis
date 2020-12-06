@@ -49,5 +49,13 @@
     "type": "git",
     "url": "git+https://github.com/TechPot-Studio/peb.js.git"
   },
-  "homepage": "https://github.com/TechPot-Studio/peb.js#readme"
+  "homepage": "https://github.com/TechPot-Studio/peb.js#readme",
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "src/*.js",
+        "maxSize": "15kB"
+      }
+    ]
+  }
 }
