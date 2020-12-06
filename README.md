@@ -79,6 +79,6 @@ Number is the **least** version it supports
 
 ---
 
-<p align="right">
+<p align="right" title="Created by TechPot Studio OpenSource">
 <img width="200" src="https://cdn.jsdelivr.net/gh/TechPot-Studio/Pecis/assets/studio_banner.png" alt="Studio banner" />
 </p>
