@@ -38,9 +38,9 @@
     "node": ">14.0.0"
   },
   "scripts": {
-    "build:minify": "terser dist/pecis.min.js -c toplevel=true -m -o dist/pecis.min.js",
+    "build:test": "node ./dist/pecis.min.js",
     "build:webpack": "webpack",
-    "build": "npm run build:webpack && npm run build:minify"
+    "build": "npm run build:webpack && npm run build:test"
   },
   "repository": {
     "type": "git",
