@@ -4,8 +4,13 @@
   "version": "0.0.1",
   "main": "dist/pecis.min.js",
   "typings": "peb.d.ts",
-  "description": "Peb.js makes JS easier",
+  "description": "Pecis makes JS easier",
   "author": "TechPot Studio <techpot-studio@yandex.com>",
+  "files": [
+    "dist/",
+    "peb.d.ts",
+    "SECURITY.md"
+  ],
   "keywords": [
     "techpot",
     "javascript",
@@ -41,7 +46,6 @@
     "node": ">14.0.0"
   },
   "scripts": {
-    "build:test": "node ./dist/pecis.min.js",
     "build:webpack": "webpack",
     "build": "npm run build:webpack"
   },
@@ -49,13 +53,5 @@
     "type": "git",
     "url": "git+https://github.com/TechPot-Studio/peb.js.git"
   },
-  "homepage": "https://github.com/TechPot-Studio/peb.js#readme",
-  "bundlewatch": {
-    "files": [
-      {
-        "path": "src/*.js",
-        "maxSize": "15kB"
-      }
-    ]
-  }
+  "homepage": "https://github.com/TechPot-Studio/peb.js#readme"
 }
