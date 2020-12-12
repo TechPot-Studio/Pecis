@@ -6,7 +6,7 @@ declare module 'peb' {
     /* type declare */
 
     type wrapPageTarget = '_blank' | '_self' | '_top' | '_parent'
-    type XHRTypes = 'GET' | 'get' | 'POST' | 'post'
+    type XHRTypes = 'GET' | 'POST'
     type XHRResponseTypes = 'arraybuffer' | 'blob' | 'document' | 'json' | 'text' | 'ms-stream'
 
     /* interface declare */
@@ -19,7 +19,7 @@ declare module 'peb' {
         data?: any,
         /** Response type */
         response?: XHRResponseTypes,
-        /** Preset function */
+        /** Function to set ajax */
         preset?: (request: XMLHttpRequest) => void;
         /** Function to do when success */
         success?: (response: any) => void,
