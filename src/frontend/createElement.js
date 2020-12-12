@@ -1,5 +1,4 @@
 import elementOperator from '../utils/elementOperator';
-import FakeElement from '../utils/FakeElement';
 
 /**
  * Create an element
@@ -9,9 +8,9 @@ import FakeElement from '../utils/FakeElement';
  */
 export default function createElement(name, attr, ...child) {
     let is = name instanceof Array,
-        create = globalThis.document ? document.createElement : () => new FakeElement(),
+        create = globalThis.document ? document.createElement : () => {},
         result = is ? create(name[0], {is: name[1]}) : create(name);
     elementOperator.setMultipleAttributes(result, attr);
-    result.append(...child);
+    result?.append(...child);
     return result;
 };
