@@ -1,7 +1,7 @@
 ## Contribute This Repository
 Think this repository is good? You can do something practical-contribute to this repo!
 ### Report a bug to us
-Go to [Issues](//github.com/TechPot-Studio/pecis.js/issues) 
+Go to [Issues](https://github.com/TechPot-Studio/pecis.js/issues) 
 
 Select a template fit yourself and follow the template to complete the form
 
