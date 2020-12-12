@@ -47,10 +47,6 @@ jobs:
         with:
           node-version: 14
       - run: npm install bundlewatch --no-save
-      - run: npx bundlewatch
+      - run: npx bundlewatch --max-size 100KB ./src/*.js
         env:
           BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
-          CI_REPO_OWNER: TechPot-Studio
-          CI_REPO_NAME: Pecis
-          CI_BRANCH: main
-          CI_COMMIT_SHA: $GITHUB_SHA
