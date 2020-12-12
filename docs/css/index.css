@@ -1,0 +1,40 @@
+@import "global.css";
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+div#banner {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    border-bottom: 1px solid #000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 25px;
+    box-shadow: 0 0 0 transparent;
+
+    transition-property: height, box-shadow;
+    transition-duration: 0.5s;
+}
+
+div#banner:not(:hover) {
+    height: 300px;
+    box-shadow: 0 2px 2px #888888;
+}
+
+img.logo {
+    display: inline-block;
+    width: 292px;
+    height: 117px;
+}
+
+div.body {
+    height: 100%;
+}
