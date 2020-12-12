@@ -21,18 +21,17 @@ width="300"/>
   <a href="//github.com/TechPot-Studio/Pecis/releases" title="Lastest Release"><img src="https://img.shields.io/github/v/release/TechPot-Studio/pecis?label=lastest%20release&style=flat-square" /></a>
   <a href="//github.com/TechPot-Studio/Pecis/releases" title="Lastest Pre-Release"><img src="https://img.shields.io/github/v/release/TechPot-Studio/pecis?include_prereleases&label=lastest%20prerelease&style=flat-square" /></a>
   <a href="//github.com/TechPot-Studio/Pecis/releases" title="Commits Since Latest Release"><img src="https://img.shields.io/github/commits-since/TechPot-Studio/Pecis/latest/master?include_prereleases&logo=github&style=flat-square" /></a>
-  <a href="src/Pecis" title="Size"><img src="https://img.shields.io/github/size/TechPot-Studio/Pecis/src/pecis.js?style=flat-square" /></a>
-  <a href="./dist/pecis.min.js" title="Minified Size"><img src="https://img.shields.io/github/size/TechPot-Studio/Pecis/dist/pecis.min.js?label=minified%20size&style=flat-square" /></a>
   <a title="Node.js Version"><img src="https://img.shields.io/static/v1?label=Node.js%20version&message=12&color=informational&logo=node.js&style=flat-square&logoColor=white" /></a>
   <a title="ECMAScript Version"><img src="https://img.shields.io/static/v1?label=ECMAScript%20version&message=6&color=informational&logo=JavaScript&style=flat-square&logoColor=white" /></a>
 </p>
 
 ## About
-ECMAScript 6 lightweight API that makes JS web development easier. Make the code faster, more efficient, easier to read, and compatible with other parts of the API. Created by TechPot Studio, some methods are borrowed from jQuery, and basically conform to the writing habits of the public.
+JavaScript's library that makes web development easier.\
+Zero dependencies.
 
 Support for ES5: *Not tested yet*
 ### Naming
-The French language of the web is *le lacis*, and this project originally called Peb (Pot + Web) , and Pecis and Pieces are homophonic.
+The French language of the web is *le lacis*, and this project originally called Peb (Pot + Web) , and Pecis and Pieces are homophobic.
 
 ## Installation
 ### Using **NPM**
@@ -59,26 +58,18 @@ const pecis = require('pecis');
 <script src="//unpkg.com/pecis" type="module"></script>
 ```
 
-And, we allowed download source code.
-## Browser Support
-Number is the **least** version it supports
-
-| Browser | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/chrome.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/firefox.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/safari.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/edge.svg" width="30" /> | <img src="https://cdn.jsdelivr.net/gh/TechPot-Studio/svg-gallery/opera.svg" width="30" /> |
-|---: | :---: | :---: | :---: | :---: | :---: |
-| **Full Support** | 54 | 63 | 10.1 | 79 | 41 |
-
-**The source of this information: [*developer.mozilla.org*](//developer.mozilla.org)**
+You can also download source code but it's not recommended
 
 ## Main Contributor
 [@TechPot-Studio/pecis](https://github.com/orgs/TechPot-Studio/teams/pecis)
 
 ## Special Thanks to
-### Software Support
-[WebStorm](https://www.jetbrains.com/webstorm/)  
-[Visual Studio Code](https://visualstudio.com)   
+### Development Tool Support
+[`Jetbrains` WebStorm](https://www.jetbrains.com/webstorm/) \
+[`Microsoft` Visual Studio Code](https://visualstudio.com)
 
 ---
 
 <p align="right" title="Created by TechPot Studio OpenSource">
-<img width="200" src="https://cdn.jsdelivr.net/gh/TechPot-Studio/Pecis/assets/studio_banner.png" alt="Studio banner" />
+<img width="200" src="https://cdn.jsdelivr.net/gh/TechPot-Studio/Pecis/assets/studio_banner.png?random=4" alt="Studio banner" />
 </p>
