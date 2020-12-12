@@ -3,8 +3,8 @@ async function selectVersion() {
         title: 'Select Version',
         input: 'select',
         inputOptions: {
-            'Stable': {
-                '0.0.1': 'Latest (0.0.1)'
+            'Available Versions': {
+                0: 'Latest (Major version 0)'
             }
         },
         confirmButtonText: 'Launch!',

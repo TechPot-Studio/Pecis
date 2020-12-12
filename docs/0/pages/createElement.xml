@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="func.xslt" ?>
+<func>
+    <name>createElement()</name>
+    <returns>HTMLElement</returns>
+    <description>
+        Select a HTMLElement and manage it
+    </description>
+    <usages>
+        <usage>
+            <definition>createElement( name, attr, ...children )</definition>
+            <avaliable>0.0.1</avaliable>
+            <params>
+                <param>
+                    <name>name</name>
+                    <type>string</type>
+                    <optional>no</optional>
+                    <description>
+                        The name of the element
+                    </description>
+                </param>
+                <param>
+                    <name>attr</name>
+                    <type>object</type>
+                    <optional>no</optional>
+                    <description>
+                        Attributes of the element
+                    </description>
+                </param>
+                <param>
+                    <name>children</name>
+                    <type>HTMLElement | Text | String</type>
+                    <optional>no</optional>
+                    <description>
+                        Children of the element
+                    </description>
+                </param>
+            </params>
+        </usage>
+        <usage>
+            <definition>createElement( nameAndConstructor, attr, ...children )</definition>
+            <avaliable>0.0.1</avaliable>
+            <params>
+                <param>
+                    <name>nameAndConstructor</name>
+                    <type>Array&lt;string, Function&gt;</type>
+                    <optional>no</optional>
+                    <description>
+                        A array of 2 items. The first item should be element name, The second item should be its constructor.
+                    </description>
+                </param>
+                <param>
+                    <name>attr</name>
+                    <type>object</type>
+                    <optional>no</optional>
+                    <description>
+                        Attributes of the element
+                    </description>
+                </param>
+                <param>
+                    <name>children</name>
+                    <type>HTMLElement | Text | String</type>
+                    <optional>no</optional>
+                    <description>
+                        Children of the element
+                    </description>
+                </param>
+            </params>
+        </usage>
+    </usages>
+
+    <shorthands>
+        <shorthand>
+            none
+        </shorthand>
+    </shorthands>
+</func>
