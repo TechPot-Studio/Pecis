@@ -27,7 +27,6 @@ pecis.pecis = pecis.version;
 
 pecis.global = globalThis;
 
-
 pecis.BaseError = errors.BaseError;
 pecis.ExtensionError = errors.ExtensionError;
 pecis.MissingEnvironmentError = errors.MissingEnvironmentError;
