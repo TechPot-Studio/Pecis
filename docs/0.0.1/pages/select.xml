@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="func.xslt" ?>
+<func>
+    <name>select()</name>
+    <returns link="ElementManager">ElementManager</returns>
+    <description>
+        Select a HTMLElement and manage it
+    </description>
+    <params>
+        <param>
+            <name>selector</name>
+            <type>string</type>
+            <optional>no</optional>
+            <description>
+                The Query Selector of the element
+            </description>
+        </param>
+        <param>
+            <name>index</name>
+            <type>number</type>
+            <optional>yes</optional>
+            <default />
+            <description>
+                Index of the item from the list
+            </description>
+        </param>
+    </params>
+    <shorthand>
+        sel()
+    </shorthand>
+</func>
