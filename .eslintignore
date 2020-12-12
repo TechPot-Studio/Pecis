@@ -7,3 +7,4 @@ LICENSE
 *.d.ts
 *.config.js
 src/scss
+*.d.ts
