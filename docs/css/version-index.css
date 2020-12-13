@@ -1,4 +1,11 @@
 @import "global.css";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 header {
     width: 100%;
     height: 80px;
@@ -7,5 +14,56 @@ header {
     text-align: center;
     border-bottom: 1px solid black;
     position: sticky;
+}
 
+div.body {
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: row;
+}
+
+div.sidebar {
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid #000;
+    overflow: auto;
+}
+
+div.sidebar ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline: 0;
+}
+
+div.sidebar ul li {
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+}
+
+div.sidebar ul li:hover {
+    color: #0088ff;
+}
+
+div.sidebar ul li:active {
+    color: #005095;
+}
+
+div.sidebar-title {
+    display: block;
+    margin-left: 20px;
+}
+
+div.page-parent {
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+}
+
+iframe#page {
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    overflow: auto;
 }

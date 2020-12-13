@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
     <meta charset="UTF-8">
-    <title>0.x.x | Pecis Docs</title>
+    <title>0 | Pecis Docs</title>
     <link rel="stylesheet" href="../css/version-index.css" />
+    <link rel="stylesheet" href="//rsms.me/inter/inter.css" />
 </head>
 <body>
+<script>
+    function switchContent(name) {
+        document.getElementById('page').src = `pages/${name}.xml`
+    }
+</script>
 <header>
     <span>
-        Pecis version 0
+        Pecis 0 Docs
     </span>
 </header>
+<div class="body">
+    <div class="sidebar">
+        <div class="sidebar-title">Functions</div>
+        <div>
+            <ul class="docs-list">
+                <li onclick="switchContent(this.innerHTML)">createElement</li>
+                <li onclick="switchContent(this.innerHTML)">select</li>
+                <li onclick="switchContent(this.innerHTML)">sleep</li>
+                <li onclick="switchContent(this.innerHTML)">query</li>
+                <li onclick="switchContent(this.innerHTML)">isNumeric</li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-parent">
+        <iframe src="pages/welcome.html" id="page"></iframe>
+    </div>
+
+</div>
+
 </body>
 </html>
