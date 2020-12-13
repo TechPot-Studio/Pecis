@@ -20,8 +20,6 @@
                         The url to navigate
                     </description>
                 </param>
-            </params>
-            <params>
                 <param>
                     <name>target</name>
                     <type>string</type>

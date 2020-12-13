@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="/func">
+    <xsl:template match="/meth">
         <html>
             <head>
                 <link rel="stylesheet" href="style.css" />
                 <link rel="stylesheet" href="//rsms.me/inter/inter.css" />
             </head>
             <body>
+                <!--
                 <div class="title">
                     pecis.<xsl:value-of select="name" />
                     <xsl:if test="beta">
@@ -32,40 +33,31 @@
                 </div>
 
                 <br />
-                <div class="subtitle">Usages</div>
+                <div class="subtitle">Properties</div>
                 <div id="inner-body">
-                    <xsl:for-each select="usages/usage">
-                        <div class="usage">
+                    <xsl:for-each select="props/prop">
+                        <div class="props">
                             <div>
-                                <xsl:value-of select="definition" />
-                                <span class="available-at">
-                                    Added in <xsl:value-of select="avaliable" />
-                                </span>
+                                <xsl:value-of select="name" />
                             </div>
-                            <ul id="params-parent">
-                                <xsl:for-each select="params/param">
-                                    <li class="param">
-                                        <div class="u-name">
+                            <ul id="props-parent">
+                                <xsl:for-each select="props/prop">
+                                    <li class="prop">
+                                        <span class="available-at">
+                                            Added in <xsl:value-of select="avaliable" />
+                                        </span>
+                                        <div class="p-name">
                                             <xsl:value-of select="name" />
                                         </div>
-                                        <div class="u-type">
-                                            Type: <xsl:value-of select="type" />
-                                        </div>
-                                        <div class="u-desc">
-                                            <xsl:value-of select="description" />
-                                        </div>
-                                        <xsl:if test="optional = 'yes'">
-                                            <div class="u-optional">
-                                                Optional
-                                            </div>
-                                        </xsl:if>
-
                                     </li>
                                 </xsl:for-each>
                             </ul>
                         </div>
                     </xsl:for-each>
                 </div>
+                -->
+                Oops! We are convert the page into xml but its incomplete yet!<br />
+                You can help us on <a href="//github.com/TechPot-Studio/Pecis/tree/gh-pages/docs">GitHub</a>!
             </body>
         </html>
     </xsl:template>

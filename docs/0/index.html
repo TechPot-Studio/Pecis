@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="//rsms.me/inter/inter.css" />
 </head>
 <body>
-<script>
-    function switchContent(name) {
-        document.getElementById('page').src = `pages/${name}.xml`
-    }
-</script>
+<script src="pages/switcher.js"></script>
 <header>
     <span>
         Pecis 0 Docs
@@ -27,6 +23,7 @@
                 <li onclick="switchContent('error')">error</li>
                 <li onclick="switchContent('forEach')">forEach</li>
                 <li onclick="switchContent('getSearchData')">getSearchData</li>
+                <li onclick="switchContent('log')">log</li>
                 <li onclick="switchContent('navigate')">navigate</li>
                 <li onclick="switchContent('select')">select</li>
                 <li onclick="switchContent('sleep')">sleep</li>

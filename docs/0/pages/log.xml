@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="meth.xslt" ?>
+<meth>
+    <name>log</name>
+    <beta />
+    <description>
+        Show logs
+    </description>
+    <props>
+        <prop>
+            <name>a</name>
+        </prop>
+    </props>
+
+    <shorthands>
+        <shorthand>
+            none
+        </shorthand>
+    </shorthands>
+</meth>

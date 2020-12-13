@@ -16,6 +16,11 @@ code {
     font-family: 'JetBrains Mono', 'Consolas', monospace;
 }
 
+a {
+    color: #0088ff;
+    text-decoration: none;
+}
+
 div.title {
     font-size: 30px;
 }
@@ -29,7 +34,7 @@ div#desc {
     font-size: 18px;
 }
 
-div.usage {
+div.usage, div.props {
     border: 1px solid #000;
     margin: 5px;
     padding: 5px;
@@ -42,7 +47,7 @@ span.available-at {
     margin-left: 20px;
 }
 
-ul#params-parent {
+ul#params-parent, ul#props-parent {
     list-style: none;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -51,7 +56,7 @@ ul#params-parent {
     padding-inline-start: 0;
 }
 
-li.param {
+li.param, li.prop {
     background-color: #fff;
     border: 1px solid #888;
     border-radius: 7px;

@@ -36,16 +36,16 @@ div.sidebar ul {
     margin-inline: 0;
 }
 
-div.sidebar ul li {
+div.sidebar ul li, div.sidebar ul summary {
     font-family: Inter, sans-serif;
     cursor: pointer;
 }
 
-div.sidebar ul li:hover {
+div.sidebar ul li:hover, div.sidebar ul summary:hover {
     color: #0088ff;
 }
 
-div.sidebar ul li:active {
+div.sidebar ul li:active, div.sidebar ul summary:active {
     color: #005095;
 }
 
@@ -90,3 +90,10 @@ div#loading {
     align-items: center;
     justify-content: center;
 }
+
+summary {
+    outline: none;
+}
+summary::before {content: '';}
+summary:focus::after {content: '+'}
+summary::after {content: '+'}
