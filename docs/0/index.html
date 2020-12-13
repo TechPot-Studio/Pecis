@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="//rsms.me/inter/inter.css" />
 </head>
 <body>
-<script src="pages/switcher.js"></script>
+<script src="pages/v.js"></script>
 <header>
     <div data-left onclick="location.href = '..'">
         Pecis Docs
@@ -15,7 +15,8 @@
 
     <div data-right>
         <label for="search">Search: </label>
-        <input type="text" name="search" id="search" value="Coming Soon" disabled />
+        <input type="text" name="search" id="search" value="Coming Soon" placeholder="Keyword" disabled />
+        <div id="result" style="visibility: hidden"></div>
     </div>
 </header>
 <div class="body">
