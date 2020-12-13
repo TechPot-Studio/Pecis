@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="func.xslt" ?>
+<func>
+    <name>forEach()</name>
+    <returns>void</returns>
+    <description>
+        For each content in the array or object likes for-of
+    </description>
+    <usages>
+        <usage>
+            <definition>forEach( obj, callbackFn )</definition>
+            <avaliable>0.0.1</avaliable>
+            <params>
+                <param>
+                    <name>obj</name>
+                    <type>object</type>
+                    <optional>no</optional>
+                    <description>
+                        The object
+                    </description>
+                </param>
+                <param>
+                    <name>callbackFn</name>
+                    <type>Function</type>
+                    <optional>no</optional>
+                    <description>
+                        The function to callback
+                    </description>
+                </param>
+            </params>
+        </usage>
+    </usages>
+
+    <shorthands>
+        <shorthand>
+            none
+        </shorthand>
+    </shorthands>
+</func>

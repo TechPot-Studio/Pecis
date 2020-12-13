@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet type="text/xsl" href="func.xslt" ?>
 <func>
-    <name>query()</name>
-    <returns>NodeList</returns>
+    <name>error()</name>
+    <returns>void</returns>
     <description>
-        Select elements on the page
+        Throw an error
     </description>
     <usages>
         <usage>
-            <definition>query( selector )</definition>
+            <definition>error( message, type )</definition>
             <avaliable>0.0.1</avaliable>
             <params>
                 <param>
-                    <name>selector</name>
+                    <name>message</name>
                     <type>string</type>
                     <optional>no</optional>
                     <description>
-                        The Query Selector of the element
+                        The message with the error
+                    </description>
+                </param>
+                <param>
+                    <name>type</name>
+                    <type>Function</type>
+                    <optional>yes</optional>
+                    <description>
+                        The type of the error
                     </description>
                 </param>
             </params>

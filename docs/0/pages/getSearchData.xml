@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet type="text/xsl" href="func.xslt" ?>
 <func>
-    <name>query()</name>
-    <returns>NodeList</returns>
+    <name>getSearchData()</name>
+    <returns>object</returns>
     <description>
-        Select elements on the page
+        Get the data of a search string
     </description>
     <usages>
         <usage>
-            <definition>query( selector )</definition>
+            <definition>getSearchData( searchString )</definition>
             <avaliable>0.0.1</avaliable>
             <params>
                 <param>
-                    <name>selector</name>
+                    <name>searchString</name>
                     <type>string</type>
                     <optional>no</optional>
                     <description>
-                        The Query Selector of the element
+                        The origin search string
                     </description>
                 </param>
             </params>

@@ -66,3 +66,24 @@ div.u-name {
 div.u-optional {
     font-style: italic;
 }
+
+span.badge {
+    display: inline-block;
+    position: relative;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+    width: auto;
+    font-weight: 500;
+}
+
+span.beta {
+    color: #06ac00;
+    border: 1px solid #06ac00;
+}
+
+span.scrap {
+    color: #f00;
+    border: 1px solid #f00;
+}
+

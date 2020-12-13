@@ -10,6 +10,12 @@
             <body>
                 <div class="title">
                     pecis.<xsl:value-of select="name" />
+                    <xsl:if test="beta">
+                        <span class="beta badge" title="This feature is still in test yet">Beta</span>
+                    </xsl:if>
+                    <xsl:if test="scrap">
+                        <span class="scrap badge" title="This will be delete in next major version">Abandoned</span>
+                    </xsl:if>
                 </div>
 
                 <hr style="border: none; border-bottom: 1px solid #000" />
@@ -21,7 +27,7 @@
                     Returns: <xsl:value-of select="returns" />
                 </div>
                 <div>
-                    Shorthands of this function:
+                    Shorthands:
                     <xsl:for-each select="shorthands">
                         <xsl:value-of select="shorthand" />
                     </xsl:for-each>
