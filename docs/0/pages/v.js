@@ -1,3 +1,3 @@
-function switchContent(name, parent=".") {
-    document.getElementById('page').src = `${parent}/pages/${name}.xml`
+function switchContent(name, parent='.', suffix='xml') {
+    document.getElementById('page').src = `${parent}/pages/${name}.${suffix}`
 }
