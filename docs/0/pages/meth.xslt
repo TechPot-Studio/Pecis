@@ -8,7 +8,6 @@
                 <link rel="stylesheet" href="//rsms.me/inter/inter.css" />
             </head>
             <body>
-                <!--
                 <div class="title">
                     pecis.<xsl:value-of select="name" />
                     <xsl:if test="beta">
@@ -35,29 +34,27 @@
                 <br />
                 <div class="subtitle">Properties</div>
                 <div id="inner-body">
-                    <xsl:for-each select="props/prop">
-                        <div class="props">
-                            <div>
-                                <xsl:value-of select="name" />
-                            </div>
-                            <ul id="props-parent">
+                    <ul class="props">
+                        <xsl:choose>
+                            <xsl:when test="scrap">
+                                <em>
+                                    Abandoned methods have no detail properties but typings file contains it =)
+                                </em>
+                            </xsl:when>
+                            <xsl:otherwise>
                                 <xsl:for-each select="props/prop">
                                     <li class="prop">
-                                        <span class="available-at">
-                                            Added in <xsl:value-of select="avaliable" />
-                                        </span>
-                                        <div class="p-name">
-                                            <xsl:value-of select="name" />
-                                        </div>
+                                        <xsl:value-of select="name" />
+                                        :
+                                        <xsl:value-of select="type" />
                                     </li>
                                 </xsl:for-each>
-                            </ul>
-                        </div>
-                    </xsl:for-each>
+                            </xsl:otherwise>
+                        </xsl:choose>
+
+                    </ul>
+
                 </div>
-                -->
-                Oops! We are convert the page into xml but its incomplete yet!<br />
-                You can help us on <a href="//github.com/TechPot-Studio/Pecis/tree/gh-pages/docs">GitHub</a>!
             </body>
         </html>
     </xsl:template>

@@ -16,6 +16,29 @@ header {
     position: sticky;
 }
 
+header div[data-left] {
+    float: left;
+    cursor: pointer;
+    width: 250px;
+}
+
+header div[data-right] {
+    float: right;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+input#search {
+    border: 1px solid #000;
+    font-size: 18px;
+    border-radius: 50px;
+    padding: 5px;
+    outline: none;
+}
+input#search:focus {
+    border: 1px solid #06ac00;
+}
+
 div.body {
     height: calc(100% - 80px);
     display: flex;
@@ -48,6 +71,9 @@ div.sidebar ul li:hover, div.sidebar ul summary:hover {
 div.sidebar ul li:active, div.sidebar ul summary:active {
     color: #005095;
 }
+
+.scrap {color: #f00;}
+.beta {color: #06ac00;}
 
 div.sidebar-title {
     display: block;

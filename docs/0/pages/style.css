@@ -34,7 +34,7 @@ div#desc {
     font-size: 18px;
 }
 
-div.usage, div.props {
+div.usage {
     border: 1px solid #000;
     margin: 5px;
     padding: 5px;
@@ -47,7 +47,7 @@ span.available-at {
     margin-left: 20px;
 }
 
-ul#params-parent, ul#props-parent {
+ul#params-parent {
     list-style: none;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -56,7 +56,7 @@ ul#params-parent, ul#props-parent {
     padding-inline-start: 0;
 }
 
-li.param, li.prop {
+li.param {
     background-color: #fff;
     border: 1px solid #888;
     border-radius: 7px;
@@ -90,5 +90,14 @@ span.beta {
 span.scrap {
     color: #f00;
     border: 1px solid #f00;
+}
+
+ul.props {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    list-style: none;
 }
 

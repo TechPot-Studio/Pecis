@@ -9,9 +9,14 @@
 <body>
 <script src="pages/switcher.js"></script>
 <header>
-    <span>
-        Pecis 0 Docs
-    </span>
+    <div data-left onclick="location.href = '..'">
+        Pecis Docs
+    </div>
+
+    <div data-right>
+        <label for="search">Search: </label>
+        <input type="text" name="search" id="search" value="Coming Soon" disabled />
+    </div>
 </header>
 <div class="body">
     <div class="sidebar">
@@ -24,13 +29,19 @@
                 <li onclick="switchContent('forEach')">forEach</li>
                 <li onclick="switchContent('getSearchData')">getSearchData</li>
                 <li onclick="switchContent('log')">log</li>
-                <li onclick="switchContent('navigate')">navigate</li>
+                <li onclick="switchContent('navigate')" class="beta">navigate</li>
                 <li onclick="switchContent('select')">select</li>
                 <li onclick="switchContent('sleep')">sleep</li>
                 <li onclick="switchContent('slice')">slice</li>
                 <li onclick="switchContent('sum')">sum</li>
                 <li onclick="switchContent('query')">query</li>
                 <li onclick="switchContent('isNumeric')">isNumeric</li>
+            </ul>
+        </div>
+        <div class="sidebar-title">Methods</div>
+        <div>
+            <ul class="docs-list">
+                <li onclick="switchContent('log')" class="scrap">log</li>
             </ul>
         </div>
     </div>
