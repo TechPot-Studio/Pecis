@@ -29,7 +29,10 @@
                             <xsl:for-each select="param">
                                 <div class="func-param">
                                     <div>
-                                        <xsl:if test="option">?</xsl:if><xsl:value-of select="name" />
+                                        <xsl:value-of select="name" />
+                                        <xsl:if test="option">
+                                            <span class="optional">Optional</span>
+                                        </xsl:if>
                                     </div>
                                     <xsl:comment>
                                         <xsl:if test="option">
@@ -69,7 +72,10 @@
 
                     </div>
                 </xsl:for-each>
-                Alias: <xsl:value-of select="alias" />
+                <xsl:if test="alias">
+                    Alias: <xsl:value-of select="alias" />
+                </xsl:if>
+
             </body>
         </html>
     </xsl:template>

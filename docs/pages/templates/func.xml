@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>Function name</name>
+    <desc>Description of the function</desc>
+    <usage>
+        <ver>Added version</ver>
+        <params>All params definition that split with ,</params>
+        <param>
+            <name>param name</name>
+            <type>param type</type>
+            <desc>param description</desc>
+            <link>The link to the param type (If available)</link>
+        </param>
+        <![CDATA[
+        Add more <param> tags to add more params
+        ]]>
+        <return>
+            <type>Return type</type>
+            <link>The link to the return type (If available)</link>
+        </return>
+    </usage>
+    <![CDATA[
+    Add more <usage> tags to add more params
+    ]]>
+</func>

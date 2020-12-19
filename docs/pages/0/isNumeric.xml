@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>isNumeric</name>
+    <desc>Return a boolean of is object a number</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>obj</params>
+        <param>
+            <name>obj</name>
+            <type>number | string</type>
+            <desc>The object</desc>
+        </param>
+        <return>
+            <type>any</type>
+        </return>
+    </usage>
+</func>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>classof</name>
+    <desc>Get the class of an object</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>obj</params>
+        <param>
+            <name>obj</name>
+            <type>any</type>
+            <desc>The object</desc>
+        </param>
+        <return>
+            <type>string</type>
+        </return>
+    </usage>
+</func>

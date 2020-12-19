@@ -5,6 +5,7 @@ if (/*@cc_on!@*/0) {
 }
 
 function switchPage (name) {
+    const loading = document.querySelector('#loading');
     loading.style.visibility = 'visible';
     document.querySelector('#content iframe').src = `${ver}/${name}.xml`
 }

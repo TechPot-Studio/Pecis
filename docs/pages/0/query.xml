@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>query</name>
+    <desc>Select an element</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>selector</params>
+        <param>
+            <name>selector</name>
+            <type>string</type>
+            <desc>Selector of the element</desc>
+        </param>
+        <return>
+            <type>NodeList</type>
+        </return>
+    </usage>
+</func>

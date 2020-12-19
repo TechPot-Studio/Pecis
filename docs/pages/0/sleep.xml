@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>sum</name>
+    <desc>Get a sum of passed in numbers</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>numbers</params>
+        <param>
+            <name>numbers</name>
+            <type>...number</type>
+            <desc>Numbers</desc>
+        </param>
+        <return>
+            <type>number</type>
+        </return>
+    </usage>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>numbers</params>
+        <param>
+            <name>numbers</name>
+            <type>Array&lt;number&gt;</type>
+            <desc>Array of numbers</desc>
+        </param>
+        <return>
+            <type>number</type>
+        </return>
+    </usage>
+</func>

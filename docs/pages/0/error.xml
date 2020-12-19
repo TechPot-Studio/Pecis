@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>error</name>
+    <desc>Throw an error</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>description, constructor</params>
+        <param>
+            <name>description</name>
+            <type>string</type>
+            <desc>Description of the error</desc>
+        </param>
+        <param>
+            <name>constructor</name>
+            <type>Function</type>
+            <option />
+            <desc>Constructor of the error</desc>
+        </param>
+        <return>
+            <type>void</type>
+        </return>
+    </usage>
+</func>

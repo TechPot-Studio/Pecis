@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>ajax</name>
+    <desc>Send ajax request</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>config</params>
+        <param>
+            <name>config</name>
+            <type>ajaxConfigOptions</type>
+            <desc>Config of the ajax</desc>
+        </param>
+        <return>
+            <type>any</type>
+        </return>
+    </usage>
+</func>

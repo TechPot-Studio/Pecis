@@ -22,5 +22,5 @@
             <link>ElementManager.xml</link>
         </return>
     </usage>
-    <alias>none</alias>
+    <alias>sel</alias>
 </func>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>getSearchData</name>
+    <desc>Convert a search data into a JSON object</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>searchString</params>
+        <param>
+            <name>searchString</name>
+            <type>string</type>
+            <desc>The search string</desc>
+        </param>
+        <return>
+            <type>object</type>
+        </return>
+    </usage>
+</func>

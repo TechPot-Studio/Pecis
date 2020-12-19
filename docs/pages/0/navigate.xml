@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>navigate</name>
+    <desc>Navigate the page</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>url, target</params>
+        <param>
+            <name>url</name>
+            <type>string</type>
+            <desc>URL to navigate</desc>
+        </param>
+        <param>
+            <name>target</name>
+            <type>string</type>
+            <option />
+            <desc>The navigate target like &lt;a target&gt; in html</desc>
+        </param>
+        <return>
+            <type>string</type>
+        </return>
+    </usage>
+</func>

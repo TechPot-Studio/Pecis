@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>createElement</name>
+    <desc>A better way to create an element</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>name, attr, children</params>
+        <param>
+            <name>name</name>
+            <type>string</type>
+            <desc>Tag name of the element</desc>
+        </param>
+        <param>
+            <name>attr</name>
+            <type>object</type>
+            <desc>Attributes of the element</desc>
+        </param>
+        <param>
+            <name>children</name>
+            <type>...string | HTMLElement</type>
+            <desc>Children of the element</desc>
+        </param>
+        <return>
+            <type>HTMLElement</type>
+        </return>
+    </usage>
+</func>

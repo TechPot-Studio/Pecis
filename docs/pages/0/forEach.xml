@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>forEach</name>
+    <desc>For each element in the object</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>callbackFn</params>
+        <param>
+            <name>callbackFn</name>
+            <type>(current, index, object) => void</type>
+            <desc>Callback function</desc>
+        </param>
+        <return>
+            <type>void</type>
+        </return>
+    </usage>
+</func>
