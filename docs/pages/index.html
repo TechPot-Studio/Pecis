@@ -8,6 +8,7 @@
 <body>
 <noscript>ENABLE THE JAVASCRIPT ON THIS SITE! QUICK!</noscript>
 <script src="functions.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <header>
     <div class="icon">
         <a href='..'>
@@ -20,6 +21,10 @@
 
         <label for="select-ver">Version: </label>
         <select id="select-ver">
+            <optgroup label="Favourite">
+                <option value="0">recommended</option>
+                <option value="null">latest</option>
+            </optgroup>
             <optgroup label="Stable">
                 <option disabled>Unavailable</option>
             </optgroup>
@@ -36,7 +41,7 @@
 <div class="body">
     <aside id="sidebar">
         <!-- All of navigator placed here. It takes very long -->
-        <div data-ver="0">
+        <div class="sidebar-content sidebar-0">
             <ul class="docs-list">
                 <li>ajax</li>
                 <li>classof</li><li>createElement</li>

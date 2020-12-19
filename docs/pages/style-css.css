@@ -46,6 +46,7 @@ span.optional {
     padding: 0 5px;
     border-radius: 9px;
     border: 1px solid #111;
+    font-weight: 400;
 }
 
 div.func-param-type {
