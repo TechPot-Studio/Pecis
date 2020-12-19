@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>select</name>
+    <desc>Select an element and manage it</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>selector, index</params>
+        <param>
+            <name>selector</name>
+            <type>string</type>
+            <desc>Selector of the element</desc>
+        </param>
+        <param>
+            <name>index</name>
+            <type>number</type>
+            <option />
+            <desc>Index of the element in the list of all elements that fits the criteria</desc>
+        </param>
+        <return>
+            <type>ElementManager</type>
+            <link>ElementManager.xml</link>
+        </return>
+    </usage>
+    <alias>none</alias>
+</func>

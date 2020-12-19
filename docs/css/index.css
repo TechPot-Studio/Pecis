@@ -41,11 +41,11 @@ div.body {
     padding-top: 20px;
 }
 
-input#join-docs {
+input#goto-doc {
     display: inline-block;
     font-size: 30px;
     border: 1px solid black;
-    width: 200px;
+    width: 400px;
     height: 75px;
     outline: none;
     cursor: pointer;
@@ -54,6 +54,6 @@ input#join-docs {
     transition-duration: 0.1s;
 }
 
-input#join-docs:hover {
+input#goto-doc:hover {
     background-color: #fff;
 }

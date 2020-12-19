@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pecis Docs</title>
+    <link rel="stylesheet" href="page.css" />
+</head>
+<body>
+<noscript>ENABLE THE JAVASCRIPT ON THIS SITE! QUICK!</noscript>
+<script src="functions.js"></script>
+<header>
+    <div class="icon">
+        <a href='..'>
+            <img src="../images/pecis.png" alt="Pecis" width="584" height="233" />
+        </a>
+
+    </div>
+
+    <div class="header-left">
+
+        <label for="select-ver">Version: </label>
+        <select id="select-ver">
+            <optgroup label="Stable">
+                <option disabled>Unavailable</option>
+            </optgroup>
+            <optgroup label="Unreleased">
+                <option value="0">0 (Preview)</option>
+            </optgroup>
+        </select>
+    </div>
+    <div class="header-right">
+        <label for="search">Search: </label>
+        <input id="search" type="search" placeholder="Type here..." />
+    </div>
+</header>
+<div class="body">
+    <aside id="sidebar">
+        <!-- All of navigator placed here. It takes very long -->
+        <div data-ver="0">
+            <ul class="docs-list">
+                <li>select</li>
+            </ul>
+        </div>
+    </aside>
+    <div id="content">
+        <iframe>
+            This site used iframe which is not supported by your current browser
+        </iframe>
+        <div id="loading" style="visibility: hidden">
+            <div>
+                Loading...
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

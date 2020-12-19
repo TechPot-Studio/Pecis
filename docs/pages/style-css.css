@@ -1,0 +1,56 @@
+@import "//rsms.me/inter/inter.css";
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+div.title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+hr.sep {
+    border: none;
+    border-bottom: 1px solid #000
+}
+
+div.item {
+    height: auto;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+span.ver {
+    color: #888;
+}
+
+div.func-param {
+    height: auto;
+    margin: 5px;
+    padding-left: 5px;
+    border-left: 2px solid #888;
+    transition-property: border-left-width;
+    transition-duration: 0.3s;
+}
+div.func-param:hover {
+    border-left: 5px solid #888;
+}
+
+div.func-param-type {
+    font-weight: 600;
+}
+
+div.func-param-optional {
+    font-style: italic;
+}
+
+a.link[href] {
+    color: #08f;
+    text-decoration: none;
+    cursor: pointer;
+}
+a.link[href]:hover {
+    text-decoration: underline;
+}
