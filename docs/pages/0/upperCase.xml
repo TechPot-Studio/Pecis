@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<func>
+    <name>upperCase</name>
+    <desc>Turn a string into upper case</desc>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>str</params>
+        <param>
+            <name>str</name>
+            <type>string</type>
+            <desc>The string to operate</desc>
+        </param>
+        <return>
+            <type>string</type>
+        </return>
+    </usage>
+</func>

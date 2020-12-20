@@ -25,6 +25,7 @@ function switchVer() {
             timer: 3000
         });
     } catch (e) {
+        document.querySelector('#content iframe').src = 'display/ver-not-found.html'
         Swal.fire({
             title: 'Oops!',
             text: `We have not found the version ${ver}!`,

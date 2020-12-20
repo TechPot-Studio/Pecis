@@ -1,30 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
 <func>
-    <name>sum</name>
-    <desc>Get a sum of passed in numbers</desc>
+    <name>sleep</name>
+    <desc>Sleep times</desc>
     <usage>
         <ver>0.0.1</ver>
-        <params>numbers</params>
+        <params>milliseconds</params>
         <param>
-            <name>numbers</name>
-            <type>...number</type>
-            <desc>Numbers</desc>
+            <name>milliseconds</name>
+            <type>number</type>
+            <desc>Milliseconds to sleep</desc>
         </param>
         <return>
-            <type>number</type>
-        </return>
-    </usage>
-    <usage>
-        <ver>0.0.1</ver>
-        <params>numbers</params>
-        <param>
-            <name>numbers</name>
-            <type>Array&lt;number&gt;</type>
-            <desc>Array of numbers</desc>
-        </param>
-        <return>
-            <type>number</type>
+            <type>Promise</type>
         </return>
     </usage>
 </func>

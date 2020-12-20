@@ -92,9 +92,11 @@ ul.docs-list {
     margin-block-start: 0;
     margin-block-end: 0;
     cursor: pointer;
+    list-style: circle;
 }
 ul.docs-list li:hover {
-    color: #0088ff;
+    list-style: disc;
+    /*color: #aaa;*/
 }
 
 div#loading {
