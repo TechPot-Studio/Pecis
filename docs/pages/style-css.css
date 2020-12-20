@@ -81,6 +81,7 @@ ul#map {
     display: block;
 }
 ul#map li {
+    font-size: 16px;
     cursor: pointer;
     border-left: 2px solid #555;
     padding-left: 5px;
@@ -91,6 +92,7 @@ ul#map li:hover {
     border-left: 5px solid #555;
 }
 ul#map li a {
+    font-size: 16px;
     text-decoration: none;
     color: #000;
 }

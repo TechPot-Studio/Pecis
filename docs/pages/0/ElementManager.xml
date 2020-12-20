@@ -27,6 +27,21 @@
     </prop>
 
     <meth>
+        <name>append</name>
+        <desc>Add children the element</desc>
+        <ver>0.0.1</ver>
+        <params>children</params>
+        <param>
+            <name>children</name>
+            <type>...string | HTMLElement</type>
+            <desc>Childrens to add</desc>
+        </param>
+        <return>
+            <type>ElementManager</type>
+        </return>
+        <alias>add</alias>
+    </meth>
+    <meth>
         <name>addClass</name>
         <desc>Add class to the element</desc>
         <ver>0.0.1</ver>
@@ -79,6 +94,15 @@
         </return>
     </meth>
     <meth>
+        <name>child</name>
+        <desc>Manage children</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>void</type>
+        </return>
+    </meth>
+    <meth>
         <name>display</name>
         <desc>Set display type</desc>
         <ver>0.0.1</ver>
@@ -91,6 +115,22 @@
         <return>
             <type>this</type>
         </return>
+    </meth>
+    <meth>
+        <name>delete</name>
+        <desc>Delete elements</desc>
+        <ver>0.0.1</ver>
+        <params>index</params>
+        <param>
+            <name>index</name>
+            <type>number</type>
+            <option />
+            <desc>The index to delete. If this is void, all of elements will be delete</desc>
+        </param>
+        <return>
+            <type>void</type>
+        </return>
+        <alias>del</alias>
     </meth>
     <meth>
         <name>first</name>
@@ -149,6 +189,33 @@
         </return>
     </meth>
     <meth>
+        <name>next</name>
+        <desc>Manage next element</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>void</type>
+        </return>
+    </meth>
+    <meth>
+        <name>prev</name>
+        <desc>Manage previous element</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>void</type>
+        </return>
+    </meth>
+    <meth>
+        <name>parent</name>
+        <desc>Manage parent</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>void</type>
+        </return>
+    </meth>
+    <meth>
         <name>value</name>
         <desc>Get or merge value of a form element</desc>
         <ver>0.0.1</ver>
@@ -184,6 +251,25 @@
         <no-param />
         <return>
             <type>this</type>
+        </return>
+    </meth>
+    <meth>
+        <name>toggleVisible</name>
+        <desc>Toggle visible</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>void</type>
+        </return>
+        <alias>toggle</alias>
+    </meth>
+    <meth>
+        <name>toArray</name>
+        <desc>Convert object into an standard array</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>void</type>
         </return>
     </meth>
     <meth>
