@@ -13,6 +13,7 @@ import {
     isNumeric,
     log, lowerCase,
     navigate,
+    parse,
     query,
     select, setDefault, sleep, slice, sum, stringTimes,
     upperCase
@@ -53,6 +54,7 @@ pecis.log = log;
 pecis.forEach = forEach;
 pecis.getSearchData = getSearchData;
 pecis.query = query;
+pecis.parse = parse;
 pecis.navigate = navigate;
 pecis.noop = function () {/* NOOP */};
 pecis.error = error;

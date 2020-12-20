@@ -9,6 +9,7 @@ import getSearchData from './methods/getSearchData';
 import isNumeric from './math/isNumeric';
 import log from './methods/log';
 import navigate from './methods/navigate';
+import parse from './manipulate/parse';
 import query from './frontend/query';
 import select from './frontend/select';
 import setDefault from './manipulate/setDefault';
@@ -30,6 +31,7 @@ export {
     log,
     lowerCase,
     navigate,
+    parse,
     query,
     select,
     setDefault,

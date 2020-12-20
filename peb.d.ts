@@ -1,7 +1,7 @@
 /**
  * Peb.js JavaScript library typings
  */
-declare module 'peb' {
+declare module 'pecis' {
 
     /* type declare */
 
@@ -33,12 +33,12 @@ declare module 'peb' {
         }
     }
 
-    /* namespace peb */
+    /* namespace pecis */
 
     /**
-     * A namespace of basic pecis.js method peb
+     * A namespace of basic pecis.js method pecis
      */
-    namespace peb {
+    namespace pecis {
         /** Version of pecis.js */
         const version: string;
 
@@ -570,5 +570,5 @@ declare module 'peb' {
         function forEach(obj: any, callbackFn: (current: any, index: number, array: any[]) => void): void
 
     }
-    export = peb
+    export default pecis
 }

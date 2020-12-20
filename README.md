@@ -30,6 +30,8 @@ JavaScript's library that makes web development easier.\
 Zero dependencies.
 
 Support for ES5: *Not tested yet*
+
+You can view documentation at [pecis.js.org](https://pecis.js.org)
 ### Naming
 The French language of the web is *le lacis*, and this project originally called Peb (Pot + Web) , and Pecis and Pieces are homophobic.
 
@@ -58,7 +60,7 @@ const pecis = require('pecis');
 <script src="//unpkg.com/pecis" type="module"></script>
 ```
 
-You can also download source code but it's not recommended
+You can also download source code, but it's not recommended
 
 ## Main Contributor
 [@TechPot-Studio/pecis](https://github.com/orgs/TechPot-Studio/teams/pecis)
