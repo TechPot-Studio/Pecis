@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta translate="no" />
     <title>Pecis Docs</title>
     <link rel="stylesheet" href="page.css" />
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
 </head>
 <body>
 <noscript>ENABLE THE JAVASCRIPT ON THIS SITE! QUICK!</noscript>
 <script src="functions.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
 <header>
     <div class="icon">
         <a href='..'>
@@ -42,7 +45,8 @@
     <aside id="sidebar">
         <!-- All of navigator placed here. It takes very long -->
         <div class="sidebar-content sidebar-0">
-            <ul class="docs-list">
+            <div class="category">Functions</div>
+            <ul class="docs-list notranslate">
                 <li>ajax</li>
                 <li>camelCase</li><li>classof</li><li>createElement</li>
                 <li>error</li>
@@ -54,6 +58,10 @@
                 <li>query</li>
                 <li>select</li><li>sum</li>
                 <li>upperCase</li>
+            </ul>
+            <div class="category">Class</div>
+            <ul class="docs-list notranslate">
+                <li>ElementManager</li>
             </ul>
         </div>
     </aside>

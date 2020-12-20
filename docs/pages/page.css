@@ -120,3 +120,8 @@ div#loading div {
     justify-content: center;
     border-radius: 5px;
 }
+
+div.category {
+    font-size: 23px;
+    padding: 0 10px;
+}

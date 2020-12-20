@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../style.xslt" ?>
+<class>
+    <name>ElementManager</name>
+    <desc>Manage element</desc>
+
+    <cons>
+        <params>element</params>
+        <param>
+            <name>element</name>
+            <type>HTMLElement | NodeList</type>
+            <desc>Element to manage</desc>
+        </param>
+    </cons>
+
+    <prop>
+        <ver>0.0.1</ver>
+        <name>length</name>
+        <type>number</type>
+        <desc>Length of the elements</desc>
+    </prop>
+    <prop>
+        <ver>0.0.1</ver>
+        <name>element</name>
+        <type>any</type>
+        <desc>Original element when create a new ElementManager object</desc>
+    </prop>
+
+    <meth>
+        <name>addClass</name>
+        <desc>Add class to the element</desc>
+        <ver>0.0.1</ver>
+        <params>tokens</params>
+        <param>
+            <name>tokens</name>
+            <type>...string</type>
+            <desc>String tokens to add</desc>
+        </param>
+        <return>
+            <type>ElementManager</type>
+        </return>
+    </meth>
+    <meth>
+        <name>bind</name>
+        <desc>Bind an action on the element</desc>
+        <ver>0.0.1</ver>
+        <params>event, listener</params>
+        <param>
+            <name>event</name>
+            <type>string</type>
+            <desc>Event to bind</desc>
+        </param>
+        <param>
+            <name>listener</name>
+            <type>function</type>
+            <desc>function to bind</desc>
+        </param>
+        <return>
+            <type>void</type>
+        </return>
+        <alias>on</alias>
+    </meth>
+    <meth>
+        <name>class</name>
+        <desc>Get the class list of the element</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>DOMTokenList</type>
+        </return>
+    </meth>
+    <meth>
+        <name>clearClass</name>
+        <desc>Clear all of the class of the element</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>void</type>
+        </return>
+    </meth>
+    <meth>
+        <name>display</name>
+        <desc>Set display type</desc>
+        <ver>0.0.1</ver>
+        <params>type</params>
+        <param>
+            <name>type</name>
+            <type>string</type>
+            <desc>The display type</desc>
+        </param>
+        <return>
+            <type>this</type>
+        </return>
+    </meth>
+    <meth>
+        <name>first</name>
+        <desc>Manage the first item in the list</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>ElementManager</type>
+        </return>
+    </meth>
+    <meth>
+        <name>hide</name>
+        <desc>Hide the element</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>ElementManager</type>
+        </return>
+    </meth>
+    <meth>
+        <name>html</name>
+        <desc>Get or merge inner html</desc>
+        <ver>0.0.1</ver>
+        <params>newer</params>
+        <param>
+            <name>value</name>
+            <type>string</type>
+            <option />
+            <desc>The value will inner html change to</desc>
+        </param>
+        <return>
+            <type>this | string</type>
+        </return>
+    </meth>
+    <meth>
+        <name>text</name>
+        <desc>Get inner text</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>string</type>
+        </return>
+    </meth>
+    <meth>
+        <name>manageItem</name>
+        <desc>Manage a item in the list</desc>
+        <ver>0.0.1</ver>
+        <params>index</params>
+        <param>
+            <name>index</name>
+            <type>number</type>
+            <desc>Index</desc>
+        </param>
+        <return>
+            <type>ElementManager</type>
+        </return>
+    </meth>
+    <meth>
+        <name>value</name>
+        <desc>Get or merge value of a form element</desc>
+        <ver>0.0.1</ver>
+        <param>
+            <name>value</name>
+            <type>string</type>
+            <option />
+            <desc>The value will value change to</desc>
+        </param>
+        <return>
+            <type>this | string</type>
+        </return>
+        <alias>val</alias>
+    </meth>
+    <meth>
+        <name>removeClass</name>
+        <desc>Remove class to the element</desc>
+        <ver>0.0.1</ver>
+        <params>tokens</params>
+        <param>
+            <name>tokens</name>
+            <type>...string</type>
+            <desc>String tokens to remove</desc>
+        </param>
+        <return>
+            <type>ElementManager</type>
+        </return>
+    </meth>
+    <meth>
+        <name>show</name>
+        <desc>Show element</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>this</type>
+        </return>
+    </meth>
+    <meth>
+        <name>last</name>
+        <desc>Manage the last item in the list</desc>
+        <ver>0.0.1</ver>
+        <no-param />
+        <return>
+            <type>ElementManager</type>
+        </return>
+    </meth>
+</class>

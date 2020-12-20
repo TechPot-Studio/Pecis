@@ -22,5 +22,18 @@
             <link>ElementManager.xml</link>
         </return>
     </usage>
+    <usage>
+        <ver>0.0.1</ver>
+        <params>element</params>
+        <param>
+            <name>element</name>
+            <type>HTMLElement | NodeList</type>
+            <desc>HTML element to manage</desc>
+        </param>
+        <return>
+            <type>ElementManager</type>
+            <link>ElementManager.xml</link>
+        </return>
+    </usage>
     <alias>sel</alias>
 </func>

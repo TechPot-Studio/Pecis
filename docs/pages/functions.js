@@ -1,4 +1,7 @@
 let ver;
+const client = algoliasearch('W84E6V7CXM', /* Search only */ '45ecb96fa469d1e8d8526c713fb48c5c'),
+    index = client.initIndex('pecis_docs');
+
 
 if (/*@cc_on!@*/0) {
     window.close();
@@ -7,10 +10,12 @@ if (/*@cc_on!@*/0) {
 function switchPage(name) {
     const loading = document.querySelector('#loading');
     loading.style.visibility = 'visible';
-    document.querySelector('#content iframe').src = `${ver}/${name}.xml`
+    document.querySelector('#content iframe').src = `${ver}/${name}.xml`;
+    document.querySelector('title').innerHTML = `${name} at Pecis Docs`
 }
 
 function switchVer() {
+    document.querySelector('title').innerHTML = `Pecis Docs`
     ver = document.querySelector('#select-ver').value;
     document.querySelector('#content iframe').removeAttribute('src');
     document.querySelectorAll('div.sidebar-content').forEach(each => each.style.display = 'none');
