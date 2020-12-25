@@ -1,6 +1,4 @@
 let ver;
-const client = algoliasearch('W84E6V7CXM', /* Search only */ '45ecb96fa469d1e8d8526c713fb48c5c'),
-    index = client.initIndex('pecis_docs');
 
 
 if (/*@cc_on!@*/0) {
