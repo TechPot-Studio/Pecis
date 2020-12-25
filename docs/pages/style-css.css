@@ -1,8 +1,19 @@
 @import "//rsms.me/inter/inter.css";
+html[data-dark-mode="false"] {
+    --font-color: #000;
+    --font-color-2: #888;
+    --badge-1: #dcdcdc;
+    --seprator: #444;
+    --item-border: #000;
+    --quoter: #888;
+    --href: #08f;
+    --map: #555;
+}
 
 * {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
+    color: var(--font-color);
 }
 
 html {
@@ -16,40 +27,38 @@ div.title {
 
 hr.sep {
     border: none;
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(--seprator);
 }
 
 div.item {
     height: auto;
-    border: 1px solid #000000;
+    border: 1px solid var(--item-border);
     border-radius: 10px;
     padding: 10px;
     margin: 5px 0;
 }
 
 span.ver {
-    color: #888;
+    color: var(--font-color-2);
 }
 
 div.func-param {
     height: auto;
     margin: 5px;
     padding-left: 5px;
-    border-left: 2px solid #888;
+    border-left: 2px solid var(--quoter);
     transition-property: border-left-width;
     transition-duration: 0.3s;
 }
 div.func-param:hover {
-    border-left: 5px solid #888;
+    border-left: 5px solid var(--quoter);
 }
 
 span.optional {
     font-size: 18px;
-    background-color: #e0e0e0;
     margin: 0 5px;
     padding: 0 5px;
-    border-radius: 9px;
-    border: 1px solid #111;
+    background-color: var(--badge-1);
     font-weight: 400;
 }
 
@@ -62,7 +71,7 @@ div.func-param-optional {
 }
 
 a.link[href] {
-    color: #08f;
+    color: var(--href);
     text-decoration: none;
     cursor: pointer;
 }
@@ -83,7 +92,7 @@ ul#map {
 ul#map li {
     font-size: 16px;
     cursor: pointer;
-    border-left: 2px solid #555;
+    border-left: 2px solid var(--map);
     padding-left: 5px;
     transition-property: border-left;
     transition-duration: 0.1s;

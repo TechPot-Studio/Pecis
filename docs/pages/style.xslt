@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="/func">
-        <html>
+        <html data-dark-mode="false">
             <head>
                 <link rel="stylesheet" href="../style-css.css" />
             </head>
@@ -68,7 +68,7 @@
     </xsl:template>
 
     <xsl:template match="/class">
-        <html>
+        <html data-dark-mode="false">
             <head>
                 <link rel="stylesheet" href="../style-css.css" />
             </head>
