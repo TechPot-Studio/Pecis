@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -39,5 +41,14 @@ module.exports = {
             }
         ]
     },
-
+    plugins: [
+    ],
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false
+            }),
+            new webpack.BannerPlugin('Pecis JavaScript Library | pecis.js.org'),
+        ]
+    }
 };
