@@ -1,10 +1,10 @@
 /**
- * Peb.js JavaScript library typings
+ * Peb.js JavaScript library
+ * See pecis.js.org for details
  */
 declare module 'pecis' {
 
     /* type declare */
-
     type wrapPageTarget = '_blank' | '_self' | '_top' | '_parent'
     type XHRTypes = 'GET' | 'POST'
     type XHRResponseTypes = 'arraybuffer' | 'blob' | 'document' | 'json' | 'text' | 'ms-stream'
@@ -53,16 +53,10 @@ declare module 'pecis' {
             constructor(message: string)
         }
 
-        /**
-         * Throw in case of required a valid object but value is none
-         */
         class NullObjectError extends BaseError {
             constructor(message: string)
         }
 
-        /**
-         * Throw in case of missing node.js or browser environment
-         */
         class MissingEnvironmentError extends BaseError {
             constructor(message: string)
         }
@@ -71,25 +65,10 @@ declare module 'pecis' {
          * Define translator of `peb-trans` HTML tag
          */
         class TranslationTable {
-
-            /**
-             * translation table constructor
-             */
             constructor(table: translationTableOptions)
 
-            /**
-             * Set translation table
-             */
             set(table: TranslationTable)
-
-            /**
-             * Get table value
-             */
             get(): object
-
-            /**
-             * Translation by language
-             */
             translate(lang: string): void
         }
 
@@ -102,135 +81,31 @@ declare module 'pecis' {
             /** Length of list */
             length: number
 
-            /**
-             * Convert HTMLElement to operable element
-             */
             constructor(node: HTMLElement|NodeList|HTMLCollection)
 
-            /**
-             * Get item by index
-             */
             item(index: number): HTMLElement
-
-            /**
-             * Manage item by index
-             */
             manageItem(index: number): ElementManager
-
-            /**
-             * Manage first item
-             */
             first(): ElementManager
-
-            /**
-             * Manage last item
-             */
             last(): ElementManager
-
-            /**
-             * Each all of element
-             */
             forEach(callbackFn: (currentElement: HTMLElement, index: number, list: ElementManager) => void): void
-
-            /**
-             * Get or set html
-             */
             html(newer: string): string|ElementManager
-
-            /**
-             * Get inner text
-             */
             text(): string
-
-            /**
-             * Get or set value of a form element
-             */
             value(newer: string): void
-
-            /**
-             * Get or set value of a form element
-             *
-             * **As known as `value` function**
-             */
             val(newer: string): void
-
-            /**
-             * Bind event listener
-             */
             bind(type: string, listener: Function): void
-
-            /**
-             * Bind event listener
-             *
-             * **As known as `bind` function**
-             */
             on(type: string, listener: Function): void
-
-            /**
-             * Get DOMSettableTokenList of class
-             */
             class(index?: number): DOMSettableTokenList
-
-            /**
-             * Add class token
-             */
             addClass(...tokens: string[]): this
-
-            /**
-             * Remove class token
-             */
             removeClass(...tokens: string[]): this
-
-            /**
-             * Clear all class
-             */
             clearClass(...tokens: string[]): this
-
-            /**
-             * Hide element
-             */
             hide(): this
-
-            /**
-             * Set element display type
-             */
             display(type: string): this
-
-            /**
-             * Show element or set display type
-             */
             show(type?: string): void
-
-            /**
-             * Remove element
-             */
             delete(index?: number): void
-
-            /**
-             * Remove element
-             *
-             * **As known as `delete` function**
-             */
             del(index?: number): void
-
-            /**
-             * Manage child of the element
-             */
             child(): this
-
-            /**
-             * Manage parent of the element
-             */
             parent(): this
-
-            /**
-             * Manage next element sibling
-             */
             next(): this
-
-            /**
-             * Manage previous element sibling
-             */
             prev(): this
 
             /** Click elements or bind a `click` event listener */
@@ -305,270 +180,71 @@ declare module 'pecis' {
             keypress(fn: Function): void
         }
 
-        /**
-         * Return the current time with timestamp
-         */
         function now(): number
 
-        /**
-         * Stringify to json string
-         * 
-         * @param obj Object to stringify
-         */
         function stringifyJson(obj: object): string
 
-        /**
-         * Parse json string to object
-         * 
-         * @param jsonString JSON string
-         */
         function parseJson(jsonString: string): object
 
-        /**
-         * Select a element as query selector
-         */
         function query(selector: string): NodeList
 
-        /**
-         * Select a HTMLElement and operate it.
-         *
-         * @param selector Css selector of the element
-         * @param index Index in the list
-         * @example
-         * pecis.sel('div.class#id[attribute=value]:state');
-         */
         function select(selector: string, index?: number): ElementManager
-
-        /**
-         * Manage element
-         */
         function select(element: HTMLElement|HTMLCollection|NodeList): ElementManager
-
-        /**
-         * Select a HTMLElement and operate it.
-         *
-         * **As known as `select` function**
-         *
-         * @param selector Css selector of the element
-         * @param index Index in the list
-         * @example
-         * pecis.sel('div.class#id[attribute=value]:state');
-         */
         function sel(selector: string, index?: number): ElementManager
-
-        /**
-         * Manage element
-         *
-         * **As known as `select` function**
-         */
         function sel(element: HTMLElement|HTMLCollection|NodeList): ElementManager
 
-        /**
-         * Send HTTP XML Request
-         */
         function ajax(type: string, url: string, data: any, success?: (text: string, xml: Document) => void, fail?: () => void): void
-
-        /**
-         * Send HTTP XML Request
-         */
         function ajax(args: ajaxConfigOptions): void
 
-        /**
-         * Create an element
-         *
-         * As known as: `genNode.element`
-         */
         function createElement(name: string, attributes: object, inner?: string, ...child: (HTMLElement)[])
 
-        /**
-         * Console infos
-         */
         namespace log {
-            /**
-             * Send log to console
-             */
             function info(...data: any[]): void
-
-            /**
-             * Send error to console
-             */
             function error(...data: any[]): void
-            
-            /**
-             * Send warning to console
-             */
             function warn(...data: any[]): void
-
-            /**
-             * Clear console
-             */
             function clear(): void
-
-            /**
-             * Send table to console
-             */
             function table(tabularData: any, properties: ReadonlyArray<string>): void
-
-            /**
-             * Add a console log group
-             */
             function group(label: string, isCollapsed?: boolean, beetween?: Function): void
-
-            /**
-             * End a group
-             */
             function groupEnd(): void
-
-            /**
-             * Trace a function
-             */
             function trace(...data: any[]): void
-
-            /**
-             * Send assertion to console
-             */
             function assert(condition: boolean, ...data: any[])
         }
 
-        /**
-         * Wrap URL to another page
-         * 
-         * @param url URL to wrap
-         * @param target Same as `target` in `<a>`
-         */
         function navigate(url: string, target: wrapPageTarget): void
 
-        /**
-         * Get a upper case of a string.
-         */
         function upperCase(str: string): string
-        
-        /**
-         * Get a lower case of a string.
-         */
         function lowerCase(str: string): string
-        
-        /**
-         * Remove spaces or dashes and convert to camel case.
-         * 
-         * Example:
-         * ```
-         * peb.camelCase("a good variable"); // aGoodVariable
-         * peb.camelCase("a-bad-variable"); // aBadVariable
-         * ```
-         */
         function camelCase(str: string): string
 
-        /**
-         * A map to store data
-         */
         class dataMap {
-            /**
-             * Construct a empty map
-             */
             constructor()
-
-            /**
-             * Set key to value
-             */
             set(key: string, value: any): void
-
-            /**
-             * Get a value by key
-             */
             get(key: string): any
-
-            /**
-             * Get all keys
-             */
             keys(): Array<string>
-
-            /**
-             * Remove a key
-             */
             remove(key: string): boolean
-
-            /**
-             * Lock a type to make all of add in values match or throw an error
-             */
             lockType(type: Function): void
         }
 
-        /**
-         * Get constructor name of the object
-         */
-        function getclass(obj: any): string
+        function classof(obj: any): string
 
-        /**
-         * Insert item to array
-         * 
-         * @param arr Array
-         * @param items Items to insert
-         */
         function insert(arr: Array<any>, ...items: any[]): number
 
-        /**
-         * An empty function
-         */
         function noop(): void
 
-        /**
-         * Slice array or string
-         * 
-         * @param obj String or array
-         * @param start Start index
-         * @param end End index
-         */
-        function slice(obj: string|Array<any>, start: number, end?: number): string|Array<any>
+        function slice(obj: string, start: number, end?: number): string
+        function slice(obj: Array<any>, start: number, end?: number): Array<any>
 
-        /**
-         * Get JSON Object format of location.search
-         * 
-         * Example:
-         * ```plain
-         * localhost:8080/?foo=b%20ar&bar=foo-foo1-foo2
-         * ```
-         * ```
-         * getSearchData(); // {foo: "b ar", bar: "foo-foo1-foo2"}
-         * ```
-         */
         function getSearchData(): object
 
-        /**
-         * Get a number or string is numeric
-         */
         function isNumeric(obj: string|number): boolean
 
-        /**
-         * await sleep time or sleep a time then do a function
-         *
-         * Example:
-         * ```
-         * peb.sleep(1000).then(() => { alert("foo") })
-         *
-         * await peb.sleep(1000)
-         * ```
-         */
-        function sleep(ms: number): Promise<undefined>
+        function sleep(milliseconds: number): Promise<void>
 
-        /**
-         * String multiplication.
-         * 
-         * This method is equivalent to string multiplication in some programming languages (e.g: Python)
-         * 
-         * @param str String
-         * @param times Times to repeat
-         * @param connector Connect character
-         */
         function stringTimes(str: string, times: number, connector?: string): string
 
-        /**
-         * ForEach in any object type
-         * 
-         * ProTip: Likes `Array.forEach`
-         */
         function forEach(obj: any, callbackFn: (current: any, index: number, array: any[]) => void): void
 
     }
+
     export default pecis
 }
