@@ -4,5 +4,5 @@
  * @param {string | number} obj
  */
 export default function isNumeric(obj) {
-    return !isNaN(obj - 0);
+    return !isNaN(obj);
 };
