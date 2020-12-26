@@ -57,3 +57,12 @@ window.addEventListener('load', function () {
     }
     switchVer();
 });
+
+window.addEventListener('keydown', function (event) {
+    /*
+    if (event.key === 'k' && event.ctrlKey) {
+        document.getElementById('search').focus();
+        event.preventDefault();
+    }
+    */
+})
