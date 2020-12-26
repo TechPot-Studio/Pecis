@@ -4,24 +4,11 @@ import vars from './utils/variables';
 import errors from './utils/errors';
 import ElementManager from './classes/ElementManager';
 import TranslationTable from './classes/TranslationTable';
-import {
-    ajax,
-    classof, createElement, camelCase,
-    error,
-    forEach,
-    getSearchData,
-    isNumeric,
-    log, lowerCase,
-    navigate,
-    parse,
-    query,
-    select, setDefault, sleep, slice, sum, stringTimes,
-    upperCase
-} from './methods';
+import * as methods from './methods';
 import PecisTransElement from './elements/PecisTransElement';
 import defineCustomElements from './utils/customElementsDefiner';
 
-defineCustomElements('pecis-trans', PecisTransElement);
+defineCustomElements(['pecis-trans', PecisTransElement]);
 
 pecis.version = vars.ver;
 pecis.pecis = pecis.version;
@@ -40,28 +27,29 @@ pecis.FIRST_ITEM = 0;
 pecis.GLOBAL = window;
 pecis.UA = window.navigator ? navigator.userAgent : null;
 
-pecis.sum = sum;
-pecis.ajax = ajax;
-pecis.classof = classof;
-pecis.createElement = createElement;
+pecis.sum = methods.sum;
+pecis.ajax = methods.ajax;
+pecis.classof = methods.classof;
+pecis.createElement = methods.createElement;
 pecis.ElementManager = ElementManager;
-pecis.sel = pecis.select = select;
-pecis.slice = slice;
-pecis.setDefault = setDefault;
-pecis.sleep = sleep;
-pecis.isNumeric = isNumeric;
-pecis.log = log;
-pecis.forEach = forEach;
-pecis.getSearchData = getSearchData;
-pecis.query = query;
-pecis.parse = parse;
-pecis.navigate = navigate;
+pecis.sel = pecis.select = methods.select;
+pecis.slice = methods.slice;
+pecis.setDefault = methods.setDefault;
+pecis.sleep = methods.sleep;
+pecis.isNumeric = methods.isNumeric;
+pecis.log = methods.log;
+pecis.forEach = methods.forEach;
+pecis.fetch = globalThis.fetch;
+pecis.getSearchData = methods.getSearchData;
+pecis.query = methods.query;
+pecis.parse = methods.parse;
+pecis.navigate = methods.navigate;
 pecis.noop = function () {/* NOOP */};
-pecis.error = error;
-pecis.upperCase = upperCase;
-pecis.lowerCase = lowerCase;
-pecis.camelCase = camelCase;
-pecis.stringTimes = stringTimes;
+pecis.error = methods.error;
+pecis.upperCase = methods.upperCase;
+pecis.lowerCase = methods.lowerCase;
+pecis.camelCase = methods.camelCase;
+pecis.stringTimes = methods.stringTimes;
 
 pecis.parseJson = JSON.parse;
 pecis.stringifyJson = JSON.stringify;
