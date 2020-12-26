@@ -196,6 +196,8 @@ declare module 'pecis' {
         function ajax(type: string, url: string, data: any, success?: (text: string, xml: Document) => void, fail?: () => void): void
         function ajax(args: ajaxConfigOptions): void
 
+        function fetch(url: string, init: Request): Promise<Response>
+
         function createElement(name: string, attributes: object, inner?: string, ...child: (HTMLElement)[])
 
         namespace log {
