@@ -62,6 +62,10 @@ const pecis = require('pecis');
 
 You can also download source code, but it's not recommended
 
+## FAQS
+**Q:** I am using peb.js, should I change to Pecis?\
+**A:** Yes. Pecis is a more standard library and used babel. We are building community for Pecis and peb.js were already desperate.
+
 ## Main Contributor
 [@TechPot-Studio/pecis](https://github.com/orgs/TechPot-Studio/teams/pecis)
 
