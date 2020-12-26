@@ -1,6 +1,7 @@
 import stringOperator from './utils/stringOperator';
 
 import ajax from './methods/ajax';
+import addStyle from './frontend/addStyle';
 import classof from './methods/classof';
 import createElement from './frontend/createElement';
 import error from './manipulate/error';
@@ -22,6 +23,7 @@ const {lowerCase, upperCase, camelCase, stringTimes} = stringOperator
 
 export {
     ajax,
+    addStyle,
     classof,
     camelCase,
     createElement,

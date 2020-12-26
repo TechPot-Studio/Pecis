@@ -29,6 +29,7 @@ pecis.UA = window.navigator ? navigator.userAgent : null;
 
 pecis.sum = methods.sum;
 pecis.ajax = methods.ajax;
+pecis.addStyle = methods.addStyle;
 pecis.classof = methods.classof;
 pecis.createElement = methods.createElement;
 pecis.ElementManager = ElementManager;
