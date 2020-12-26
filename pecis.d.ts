@@ -165,7 +165,7 @@ declare module 'pecis' {
         function now(): number;
         function stringifyJson(obj: object): string;
         function parseJson(jsonString: string): object;
-        function parse(data: any, parser: Function): any;
+        function parse(data: string, parser: Function): any;
         function query(selector: string): NodeList;
         function select(selector: string, index?: number): ElementManager;
         function select(element: HTMLElement|HTMLCollection|NodeList): ElementManager;
@@ -204,6 +204,8 @@ declare module 'pecis' {
         function slice(obj: Array<any>, start: number, end?: number): Array<any>;
         function getSearchData(): object;
         function isNumeric(obj: string|number): boolean;
+        function random(): number;
+        function random(min: number, max: number): number;
         function sleep(milliseconds: number): Promise<void>;
         function stringTimes(str: string, times: number, connector?: string): string;
         function forEach(obj: any, callbackFn: (current: any, index: number, array: any[]) => void): void;
