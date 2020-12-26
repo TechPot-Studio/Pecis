@@ -3,29 +3,32 @@
  * @param {HTMLElement | Node} element
  */
 export default class ElementManager {
-    /** @type {HTMLElement | HTMLCollection | Node | NodeList} */
-    element;
-    /** @type {number} */
-    length;
+    element: HTMLElement | NodeList;
+    length: number;
+    selector: string;
 
-    static create(element) {
+    static create(element: HTMLElement | NodeList) {
         return new ElementManager(element)
     }
 
-    constructor(origin, selector) {
+    constructor(origin: HTMLElement | NodeList, selector?: string) {
         this.element = origin;
-        this.length = origin.length || 1;
+        this.length = 'length' in origin && origin.length ? origin.length : 1;
         this.selector = selector || null;
         this.forEach((element, index) => {
             this[index] = element;
         });
     }
 
-    item(index) {
+    isSingle() {
+        return this.element instanceof HTMLElement;
+    }
+
+    item(index: number) {
         return this[index];
     }
 
-    manageItem(index) {
+    manageItem(index: number) {
         return new ElementManager(this[index]);
     }
 
@@ -41,15 +44,17 @@ export default class ElementManager {
         /* Pseudo-array must have a `splice` function */
     }
 
-    forEach(callbackFn) {
-        if (this.element instanceof Node || this.element instanceof HTMLElement || this.element instanceof HTMLDocument) {
-            callbackFn(this.element, 0, this);
+    forEach(callbackFn: (current: HTMLElement, index: number, list: ElementManager) => void) {
+        if (this.element instanceof HTMLElement || this.element instanceof HTMLDocument) {
+            callbackFn(<HTMLElement>this.element, 0, this);
         } else {
-            this.element.forEach(callbackFn);
+            this.element.forEach((current, index) => {
+                callbackFn(<HTMLElement>current, index, this);
+            });
         }
     }
 
-    html(newer) {
+    html(newer?: string) {
         if (newer === undefined) {
             return this.item(0).innerHTML;
         } else {
@@ -64,11 +69,13 @@ export default class ElementManager {
         return this.item(0).innerText;
     }
 
-    value(newer) {
+    value(newer?: string) {
         if (newer === undefined) {
             return this.item(0).value;
         } else {
-            this.forEach(eachElement => eachElement.value = newer);
+            // @ts-ignore
+            // Value is only exist on form elements
+            this.forEach(eachElement => 'value' in eachElement ? eachElement.value = newer : null);
         }
     }
 
@@ -105,7 +112,7 @@ export default class ElementManager {
 
     hide() {
         this.forEach((eachElement) => {
-            eachElement.displayType = eachElement.style.display;
+            eachElement.dataset.displayType = eachElement.style.display;
             eachElement.style.display = 'none';
         });
         return this;
@@ -121,8 +128,8 @@ export default class ElementManager {
     show(type) {
         if (type === undefined) {
             this.forEach((eachElement) => {
-                eachElement.style.display = eachElement.displayType || 'initial';
-                delete eachElement.displayType;
+                eachElement.style.display = eachElement.dataset.displayType || 'initial';
+                delete eachElement.dataset.displayType;
             })
         } else {
             this.display(type);
@@ -131,12 +138,12 @@ export default class ElementManager {
 
     toggle() {
         this.forEach((eachElement) => {
-            if (eachElement.displayType) {
-                eachElement.displayType = eachElement.style.display;
+            if (eachElement.dataset.displayType) {
+                eachElement.dataset.displayType = eachElement.style.display;
                 eachElement.style.display = 'none';
             } else {
-                eachElement.style.display = eachElement.displayType || 'initial';
-                delete eachElement.displayType;
+                eachElement.style.display = eachElement.dataset.displayType || 'initial';
+                delete eachElement.dataset.displayType;
             }
         });
     }
@@ -147,7 +154,7 @@ export default class ElementManager {
 
     delete(index) {
         if (index === undefined) {
-            this.forEach(eachElement => eachElement.parent.removeChild(eachElement));
+            this.forEach(eachElement => eachElement.parentElement.removeChild(eachElement));
         } else {
             let singleElement = this.item(index);
             singleElement.parent.removeChild(singleElement);
@@ -175,7 +182,7 @@ export default class ElementManager {
     }
 
     append(...elements) {
-        this.element.append(...elements);
+        this.element[0].append(...elements);
     }
 
     add(...elements) {

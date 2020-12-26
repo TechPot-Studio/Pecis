@@ -1,4 +1,4 @@
-import ElementManager from '../classes/ElementManager';
+import ElementManager from '../classes/ElementManager.ts';
 
 /**
  * Operate the DOM with the smallest possible code

@@ -2,7 +2,7 @@ import pecis from './core/Pecis';
 import { arr } from './utils/presetObject';
 import vars from './utils/variables';
 import errors from './utils/errors';
-import ElementManager from './classes/ElementManager';
+import ElementManager from './classes/ElementManager.ts';
 import TranslationTable from './classes/TranslationTable';
 import * as methods from './methods';
 import PecisTransElement from './elements/PecisTransElement';
