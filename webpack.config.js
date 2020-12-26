@@ -48,7 +48,9 @@ module.exports = {
             new TerserPlugin({
                 extractComments: false
             }),
-            new webpack.BannerPlugin('Pecis JavaScript Library | pecis.js.org'),
+            new webpack.BannerPlugin({
+                banner: 'Pecis JavaScript Library | pecis.js.org'
+            })
         ]
     }
 };
