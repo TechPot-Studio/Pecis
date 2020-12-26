@@ -6,7 +6,7 @@ import ElementManager from './classes/ElementManager';
 import TranslationTable from './classes/TranslationTable';
 import * as methods from './methods';
 import PecisTransElement from './elements/PecisTransElement';
-import defineCustomElements from './utils/customElementsDefiner.ts';
+import defineCustomElements from './utils/customElementsDefiner';
 
 defineCustomElements(['pecis-trans', PecisTransElement]);
 

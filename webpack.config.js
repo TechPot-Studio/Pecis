@@ -9,6 +9,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'pecis.min.js'
     },
+    resolve: {
+        extensions: ['.js', '.ts', '.scss']
+    },
     module: {
         rules: [
             {
