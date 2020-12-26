@@ -3,6 +3,7 @@
  * @param {object} config
  */
 export default function ajax(config) {
+    console.warn('Use pecis.ajax is based on the XMLHttpRequest')
     let request = new XMLHttpRequest();
     config.success = config.success || function (){};
 

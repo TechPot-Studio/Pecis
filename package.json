@@ -8,7 +8,7 @@
   "author": "TechPot Studio <techpot-studio@yandex.com>",
   "files": [
     "dist/",
-    "peb.d.ts",
+    "pecis.d.ts",
     "SECURITY.md"
   ],
   "keywords": [

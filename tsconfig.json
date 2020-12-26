@@ -1,6 +1,6 @@
 {
   "include": [
-    "peb.d.ts",
+    "pecis.d.ts",
     "src/"
   ]
 }
