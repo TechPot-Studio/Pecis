@@ -19,18 +19,6 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        "presets": [
-                            "@babel/preset-env",
-                            "@babel/preset-typescript",
-                        ],
-                        "plugins": [
-                            "@babel/plugin-proposal-class-properties",
-                            "@babel/plugin-proposal-optional-chaining",
-                            "@babel/plugin-transform-runtime"
-                        ]
-                    }
-
                 }
             },
             {
