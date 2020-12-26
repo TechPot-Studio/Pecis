@@ -56,6 +56,8 @@ pecis.stringifyJson = JSON.stringify;
 pecis.now = Date.now;
 pecis.insert = arr.push.call;
 
+pecis.random = methods.random;
+
 pecis.SearchParams = globalThis.URLSearchParams;
 
 export default pecis;

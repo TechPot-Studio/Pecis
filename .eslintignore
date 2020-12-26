@@ -5,6 +5,7 @@ dist/
 *.json
 LICENSE
 *.d.ts
+*.ts
 *.config.js
 src/scss
 *.d.ts

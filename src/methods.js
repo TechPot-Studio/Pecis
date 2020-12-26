@@ -16,6 +16,7 @@ import setDefault from './manipulate/setDefault';
 import sleep from './manipulate/sleep';
 import slice from './manipulate/slice';
 import sum from './math/sum';
+import random from './math/random';
 
 const {lowerCase, upperCase, camelCase, stringTimes} = stringOperator
 
@@ -39,5 +40,6 @@ export {
     slice,
     stringTimes,
     sum,
+    random,
     upperCase
 }
