@@ -1,35 +1,29 @@
 export default {
     /**
-     * return a new string upper cased
-     * @param {string} str
-     * @return {string}
+     * return a new string upper case
      */
-    upperCase(str) {
+    upperCase(str: string): string {
         return str.toUpperCase();
     },
 
     /**
      * return a new string lower cased
-     * @param {string} str
-     * @return {string}
      */
-    lowerCase(str) {
+    lowerCase(str: string): string {
         return str.toLowerCase();
     },
 
     /**
      * Remove spaces or dashes and convert to camel case
-     * @param {string} str
-     * @return {string}
      */
-    camelCase(str) {
+    camelCase(str: string): string {
         return str.replace(/[ -]./g, word => word.replace(/[ -]/g, '').toUpperCase());
     },
 
     /**
      * Multiple String
      */
-    stringTimes(string, times, connector = '') {
+    stringTimes(string: string, times: number, connector: string = ''): string {
         return new Array(times).fill(string).join(connector);
     }
 };

@@ -1,6 +1,6 @@
 /**
  * Peb.js JavaScript library
- * See pecis.js.org for details
+ * pecis.js.org | MIT License
  */
 declare module 'pecis' {
 
@@ -33,8 +33,6 @@ declare module 'pecis' {
             [word: string]: string
         }
     }
-
-    /* namespace pecis */
 
     /**
      * A namespace of basic pecis.js method pecis
@@ -210,5 +208,6 @@ declare module 'pecis' {
         function stringTimes(str: string, times: number, connector?: string): string;
         function forEach(obj: any, callbackFn: (current: any, index: number, array: any[]) => void): void;
     }
+
     export default pecis;
 }

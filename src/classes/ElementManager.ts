@@ -7,44 +7,44 @@ export default class ElementManager {
     length: number;
     selector: string;
 
-    static create(element: HTMLElement | NodeList) {
+    static create(element: HTMLElement | NodeList): ElementManager {
         return new ElementManager(element)
     }
 
     constructor(origin: HTMLElement | NodeList, selector?: string) {
         this.element = origin;
-        this.length = 'length' in origin && origin.length ? origin.length : 1;
+        this.length = 'length' in origin ? origin.length : 1;
         this.selector = selector || null;
         this.forEach((element, index) => {
             this[index] = element;
         });
     }
 
-    isSingle() {
+    isSingle(): boolean {
         return this.element instanceof HTMLElement;
     }
 
-    item(index: number) {
+    item(index: number): HTMLElement {
         return this[index];
     }
 
-    manageItem(index: number) {
+    manageItem(index: number): ElementManager {
         return new ElementManager(this[index]);
     }
 
-    first() {
+    first(): ElementManager {
         return this.manageItem(0);
     }
 
-    last() {
+    last(): ElementManager {
         return this.manageItem(this.length - 1)
     }
 
-    splice() {
+    splice(): void {
         /* Pseudo-array must have a `splice` function */
     }
 
-    forEach(callbackFn: (current: HTMLElement, index: number, list: ElementManager) => void) {
+    forEach(callbackFn: (current: HTMLElement, index: number, list: ElementManager) => void): void {
         if (this.element instanceof HTMLElement || this.element instanceof HTMLDocument) {
             callbackFn(<HTMLElement>this.element, 0, this);
         } else {
@@ -54,6 +54,8 @@ export default class ElementManager {
         }
     }
 
+    html(): string
+    html(newer: string): this
     html(newer?: string) {
         if (newer === undefined) {
             return this.item(0).innerHTML;
@@ -65,52 +67,75 @@ export default class ElementManager {
         }
     }
 
-    text() {
+    text(): string {
         return this.item(0).innerText;
     }
 
-    value(newer?: string) {
+    value(): string
+    value(newer: string): this
+    value(newer?: string): string | this {
         if (newer === undefined) {
-            return this.item(0).value;
+            return this.item(0)['value'] || null;
         } else {
-            // @ts-ignore
-            // Value is only exist on form elements
-            this.forEach(eachElement => 'value' in eachElement ? eachElement.value = newer : null);
+            this.forEach((eachElement) => {
+                let formElement;
+                // For TypeScript's sake
+                switch (eachElement.constructor) {
+                    case HTMLInputElement:
+                        formElement = eachElement as HTMLInputElement;
+                        break;
+                    case HTMLAudioElement:
+                        formElement = eachElement as HTMLAudioElement;
+                        break;
+                    case HTMLSelectElement:
+                        formElement = eachElement as HTMLSelectElement;
+                        break;
+                    case HTMLTextAreaElement:
+                        formElement = eachElement as HTMLTextAreaElement;
+                        break;
+                    default:
+                        return;
+                }
+
+                formElement.value = newer
+            });
         }
     }
 
-    val(newer) {
-        this.value(newer)
+    val(): string
+    val(newer: string): this
+    val(newer?: string): string | this {
+        return this.value(newer)
     }
 
-    bind(type, listener) {
+    bind(type: string, listener: EventListenerOrEventListenerObject): void {
         this.forEach(eachElement => eachElement.addEventListener(type, listener));
     }
 
-    on(type, listener) {
+    on(type: string, listener: EventListenerOrEventListenerObject): void {
         this.bind(type, listener);
     }
 
-    class() {
+    class(): DOMTokenList {
         return this.item(0).classList;
     }
 
-    addClass(...tokens) {
+    addClass(...tokens: string[]): this {
         this.forEach(eachElement => eachElement.classList.add(...tokens));
         return this;
     }
 
-    removeClass(...tokens) {
+    removeClass(...tokens: string[]): this {
         this.forEach(eachElement => eachElement.classList.remove(...tokens));
         return this;
     }
 
-    clearClass() {
+    clearClass(): this {
         this.forEach(eachElement => eachElement.className = '');
         return this;
     }
 
-    hide() {
+    hide(): this {
         this.forEach((eachElement) => {
             eachElement.dataset.displayType = eachElement.style.display;
             eachElement.style.display = 'none';
@@ -118,14 +143,14 @@ export default class ElementManager {
         return this;
     }
 
-    display(type) {
+    display(type: string): this {
         this.forEach((eachElement) => {
             eachElement.style.display = type;
         });
         return this;
     }
 
-    show(type) {
+    show(type: string): void {
         if (type === undefined) {
             this.forEach((eachElement) => {
                 eachElement.style.display = eachElement.dataset.displayType || 'initial';
@@ -136,7 +161,7 @@ export default class ElementManager {
         }
     }
 
-    toggle() {
+    toggle(): void {
         this.forEach((eachElement) => {
             if (eachElement.dataset.displayType) {
                 eachElement.dataset.displayType = eachElement.style.display;
@@ -148,92 +173,96 @@ export default class ElementManager {
         });
     }
 
-    toggleVisible() {
+    toggleVisible(): void {
         this.toggle();
     }
 
-    delete(index) {
+    delete(index: number): void {
         if (index === undefined) {
             this.forEach(eachElement => eachElement.parentElement.removeChild(eachElement));
         } else {
             let singleElement = this.item(index);
-            singleElement.parent.removeChild(singleElement);
+            singleElement.parentElement.removeChild(singleElement);
         }
     }
 
-    del(index) {
+    del(index: number): void {
         this.delete(index);
     }
 
-    child() {
-        return new ElementManager(this.item(0).children);
+    child(): ElementManager {
+        return new ElementManager(this.item(0).childNodes);
     }
 
-    parent() {
+    parent(): ElementManager {
         return new ElementManager(this.item(0).parentElement);
     }
 
-    next() {
-        return new ElementManager(this.item(0).nextElementSibling);
+    next(): ElementManager {
+        return new ElementManager(<HTMLElement> this.item(0).nextElementSibling);
     }
 
-    prev() {
-        return new ElementManager(this.item(0).previousElementSibling);
+    prev(): ElementManager {
+        return new ElementManager(<HTMLElement> this.item(0).previousElementSibling);
     }
 
-    append(...elements) {
+    append(...elements: (string|HTMLElement)[]): void {
         this.element[0].append(...elements);
     }
 
-    add(...elements) {
+    add(...elements: (string|HTMLElement)[]): void {
         this.append(...elements);
     }
 
-    toArray() {
+    toArray(): Array<HTMLElement> {
         let result = [];
         this.forEach(eachElement => result.push(eachElement));
         return result;
     }
 
-    click(fn) {
+    click(): void
+    click(fn: EventListenerOrEventListenerObject): void
+    click(fn?: EventListenerOrEventListenerObject): void {
         fn ? this.bind('click', fn) : this.forEach(eachElement => eachElement.click());
     }
 
-    focus(fn) {
+    focus(): void
+    focus(fn: EventListenerOrEventListenerObject): void
+    focus(fn?: EventListenerOrEventListenerObject): void {
         fn ? this.bind('focus', fn) : this.forEach(eachElement => eachElement.focus());
     }
 
-    mouseenter(fn)     { this.bind('mouseenter', fn); }
-    mouseleave(fn)     { this.bind('mouseleave', fn); }
-    mouseup(fn)        { this.bind('mouseup', fn); }
-    mousedown(fn)      { this.bind('mousedown', fn); }
-    mousemove(fn)      { this.bind('mousemove', fn); }
-    mouseover(fn)      { this.bind('mouseover', fn ); }
-    mouseout(fn)       { this.bind('mouseout', fn) }
-    mousewheel(fn)     { this.bind('mousewheel', fn); }
-    drag(fn)           { this.bind('drag', fn); }
-    dragstart(fn)      { this.bind('dragstart', fn); }
-    dragend(fn)        { this.bind('dragend', fn); }
-    dragenter(fn)      { this.bind('dragenter', fn); }
-    dragexit(fn)       { this.bind('dragexit', fn); }
-    dragover(fn)       { this.bind('dragover', fn); }
-    dragleave(fn)      { this.bind('dragleave', fn); }
-    canplay(fn)        { this.bind('canplay', fn); }
-    canplaythrough(fn) { this.bind('canplaythrough', fn); }
-    play(fn)           { this.bind('play', fn); }
-    playing(fn)        { this.bind('playing', fn); }
-    copy(fn)           { this.bind('copy', fn); }
-    beforecopy(fn)     { this.bind('beforecopy', fn); }
-    paste(fn)          { this.bind('paste', fn); }
-    beforepaste(fn)    { this.bind('beforepaste', fn); }
-    blur(fn)           { this.bind('blur', fn); }
-    load(fn)           { this.bind('load', fn); }
-    loadstart(fn)      { this.bind('loadstart', fn); }
-    loadeddata(fn)     { this.bind('loadeddata', fn); }
-    loadedmetadata(fn) { this.bind('loadedmetadata', fn); }
-    focusin(fn)        { this.bind('focusin', fn); }
-    focusout(fn)       { this.bind('focus', fn); }
-    keydown(fn)        { this.bind('keydown', fn); }
-    keyup(fn)          { this.bind('keyup', fn); }
-    keypress(fn)       { this.bind('keypress', fn); }
+    mouseenter(fn: EventListenerOrEventListenerObject): void     { this.bind('mouseenter', fn); }
+    mouseleave(fn: EventListenerOrEventListenerObject): void     { this.bind('mouseleave', fn); }
+    mouseup(fn: EventListenerOrEventListenerObject): void        { this.bind('mouseup', fn); }
+    mousedown(fn: EventListenerOrEventListenerObject): void      { this.bind('mousedown', fn); }
+    mousemove(fn: EventListenerOrEventListenerObject): void      { this.bind('mousemove', fn); }
+    mouseover(fn: EventListenerOrEventListenerObject): void      { this.bind('mouseover', fn ); }
+    mouseout(fn: EventListenerOrEventListenerObject): void       { this.bind('mouseout', fn) }
+    mousewheel(fn: EventListenerOrEventListenerObject): void     { this.bind('mousewheel', fn); }
+    drag(fn: EventListenerOrEventListenerObject): void           { this.bind('drag', fn); }
+    dragstart(fn: EventListenerOrEventListenerObject): void      { this.bind('dragstart', fn); }
+    dragend(fn: EventListenerOrEventListenerObject): void        { this.bind('dragend', fn); }
+    dragenter(fn: EventListenerOrEventListenerObject): void      { this.bind('dragenter', fn); }
+    dragexit(fn: EventListenerOrEventListenerObject): void       { this.bind('dragexit', fn); }
+    dragover(fn: EventListenerOrEventListenerObject): void       { this.bind('dragover', fn); }
+    dragleave(fn: EventListenerOrEventListenerObject): void      { this.bind('dragleave', fn); }
+    canplay(fn: EventListenerOrEventListenerObject): void        { this.bind('canplay', fn); }
+    canplaythrough(fn: EventListenerOrEventListenerObject): void { this.bind('canplaythrough', fn); }
+    play(fn: EventListenerOrEventListenerObject): void           { this.bind('play', fn); }
+    playing(fn: EventListenerOrEventListenerObject): void        { this.bind('playing', fn); }
+    copy(fn: EventListenerOrEventListenerObject): void           { this.bind('copy', fn); }
+    beforecopy(fn: EventListenerOrEventListenerObject): void     { this.bind('beforecopy', fn); }
+    paste(fn: EventListenerOrEventListenerObject): void          { this.bind('paste', fn); }
+    beforepaste(fn: EventListenerOrEventListenerObject): void    { this.bind('beforepaste', fn); }
+    blur(fn: EventListenerOrEventListenerObject): void           { this.bind('blur', fn); }
+    load(fn: EventListenerOrEventListenerObject): void           { this.bind('load', fn); }
+    loadstart(fn: EventListenerOrEventListenerObject): void      { this.bind('loadstart', fn); }
+    loadeddata(fn: EventListenerOrEventListenerObject): void     { this.bind('loadeddata', fn); }
+    loadedmetadata(fn: EventListenerOrEventListenerObject): void { this.bind('loadedmetadata', fn); }
+    focusin(fn: EventListenerOrEventListenerObject): void        { this.bind('focusin', fn); }
+    focusout(fn: EventListenerOrEventListenerObject): void       { this.bind('focus', fn); }
+    keydown(fn: EventListenerOrEventListenerObject): void        { this.bind('keydown', fn); }
+    keyup(fn: EventListenerOrEventListenerObject): void          { this.bind('keyup', fn); }
+    keypress(fn: EventListenerOrEventListenerObject): void       { this.bind('keypress', fn); }
 }

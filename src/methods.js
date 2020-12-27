@@ -1,4 +1,4 @@
-import stringOperator from './utils/stringOperator';
+import stringOperator from './utils/stringOperator.ts';
 
 import ajax from './methods/ajax';
 import addStyle from './frontend/addStyle';
@@ -17,7 +17,7 @@ import setDefault from './manipulate/setDefault';
 import sleep from './manipulate/sleep';
 import slice from './manipulate/slice';
 import sum from './math/sum';
-import random from './math/random';
+import random from './math/random.ts';
 
 const {lowerCase, upperCase, camelCase, stringTimes} = stringOperator
 

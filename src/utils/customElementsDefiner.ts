@@ -12,6 +12,6 @@ function defineCustomElement (name: string, constructor: CustomElementConstructo
 /**
  * Define multiple elements
  */
-export default function defineElements (...consequences: [string, CustomElementConstructor]) {
+export default function defineElements (...consequences: [string, CustomElementConstructor]): void {
     consequences.forEach(eachConsequence => defineCustomElement(eachConsequence[0], eachConsequence[1]));
 }

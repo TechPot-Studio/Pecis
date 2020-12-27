@@ -1,4 +1,4 @@
-import haveDocument from '../utils/haveDocument';
+import haveDocument from '../utils/haveDocument.ts';
 
 /**
  * Select a element

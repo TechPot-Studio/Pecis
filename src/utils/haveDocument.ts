@@ -1,7 +1,6 @@
 /**
  * Check is env have `document`
- * @return {boolean}
  */
-export default function haveDocument() {
+export default function haveDocument(): boolean {
     return globalThis.document && globalThis.Document && document instanceof Document
 }

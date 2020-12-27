@@ -51,14 +51,12 @@ pecis.upperCase = methods.upperCase;
 pecis.lowerCase = methods.lowerCase;
 pecis.camelCase = methods.camelCase;
 pecis.stringTimes = methods.stringTimes;
-
 pecis.parseJson = JSON.parse;
 pecis.stringifyJson = JSON.stringify;
 pecis.now = Date.now;
+pecis.math = Math;
 pecis.insert = arr.push.call;
-
 pecis.random = methods.random;
-
 pecis.SearchParams = globalThis.URLSearchParams;
 
 export default pecis;
