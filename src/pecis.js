@@ -8,6 +8,7 @@
 
 import './scss/styles.scss';
 import pecis from './factory';
+import getGlobal from './utils/getGlobalVariable';
 
 if (typeof module === 'object' && typeof module.exports === 'object') {
     // CommonJS
@@ -17,7 +18,7 @@ if (typeof module === 'object' && typeof module.exports === 'object') {
     define('peb', [], function () {
         return pecis;
     });
-} else {
+} else if (typeof window === 'object' && window.window === window) {
     // Browser
-    globalThis.pecis = pecis;
+    getGlobal().pecis = pecis
 }

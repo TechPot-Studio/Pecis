@@ -7,13 +7,15 @@ import TranslationTable from './classes/TranslationTable';
 import * as methods from './methods';
 import PecisTransElement from './elements/PecisTransElement';
 import defineCustomElements from './utils/customElementsDefiner';
+import getGlobal from './utils/getGlobalVariable';
 
 defineCustomElements(['pecis-trans', PecisTransElement]);
 
 pecis.version = vars.ver;
 pecis.pecis = pecis.version;
 
-pecis.global = globalThis;
+pecis.global = getGlobal();
+pecis._global = getGlobal();
 
 pecis.BaseError = errors.BaseError;
 pecis.ExtensionError = errors.ExtensionError;
@@ -24,8 +26,7 @@ pecis.MissingParameterError = errors.MissingParameterError;
 pecis.TranslationTable = TranslationTable;
 
 pecis.FIRST_ITEM = 0;
-pecis.GLOBAL = globalThis;
-pecis.UA = globalThis?.navigator?.userAgent || null;
+pecis.UA = pecis.global?.navigator?.userAgent || null;
 
 pecis.sum = methods.sum;
 pecis.ajax = methods.ajax;
