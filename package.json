@@ -9,7 +9,10 @@
   "files": [
     "dist/",
     "pecis.d.ts",
-    "SECURITY.md"
+    "SECURITY.md",
+    "README.md",
+    "LICENSE",
+    "package.json"
   ],
   "keywords": [
     "techpot",
