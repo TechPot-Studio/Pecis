@@ -1,8 +1,10 @@
-### Summary or description
-
 ### Category
-- [ ] Old platforms support
-- [ ] Readme or documentation
-- [ ] About package
-- [ ] DX or UX
-- [ ] Others
+- [ ] Documentation
+- [ ] Region support
+- [ ] Package
+- [ ] DX / UX
+- [ ] Cross platform
+- [ ] Others (*Please write below*)
+
+### Summary and description
+
