@@ -1,5 +1,5 @@
 {
-  "name": "@pecis/core",
+  "name": "pecis",
   "title": "Pecis",
   "version": "0.0.1",
   "main": "dist/pecis.min.js",
