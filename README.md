@@ -79,8 +79,8 @@ You can also download source code, but it's not recommended
 
 ## Special Thanks to
 ### Development Tool Support
-[`Jetbrains` WebStorm](https://www.jetbrains.com/webstorm/) \
-[`Microsoft` Visual Studio Code](https://visualstudio.com)
+[Jetbrains WebStorm *OpenSource License*](https://www.jetbrains.com/webstorm/) \
+[Microsoft Visual Studio Code](https://visualstudio.com)
 
 ---
 
