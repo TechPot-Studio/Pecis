@@ -3,7 +3,7 @@ import stringOperator from './utils/stringOperator.ts';
 import ajax from './methods/ajax';
 import addStyle from './frontend/addStyle';
 import classof from './methods/classof';
-import createElement from './frontend/createElement';
+import createElement from './frontend/createElement.ts';
 import error from './manipulate/error';
 import forEach from './methods/forEach';
 import getSearchData from './methods/getSearchData';

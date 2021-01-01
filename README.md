@@ -33,6 +33,13 @@ You can view documentation at [pecis.js.org](https://pecis.js.org)
 The French language of the web is *le lacis*, and this project originally called Peb (Pot + Web) , and Pecis and Pieces are homophobic.\
 You can naming in your own usage as your favourite. You can even use JQuery style, i.e. `$`
 
+## Browser Support
+- Last 2 versions of all major browsers
+- Electron
+- Internet Explorer 11
+
+*Support for IE will be ended in the summer of 2021 due to desperate*
+
 ## Installation
 ### Using **NPM**
 [![NPM information](https://nodei.co/npm/pecis.png?compact=true)](https://www.npmjs.com/package/pecis)
@@ -48,7 +55,7 @@ const pecis = require('pecis');
 ```
 **Note**: If you are using Node.js, version 14.0.0 or above is recommended. Lower versions may work, but there may be problems.
 
-### Or, grab from other API.
+### Or grab from third-party CDN
 #### jsdelivr
 ```html
 <script src="//cdn.jsdelivr.net/npm/pecis" type="module"></script>
@@ -63,6 +70,9 @@ You can also download source code, but it's not recommended
 ## FAQS
 **Q:** I am using peb.js, should I change to Pecis?\
 **A:** Yes. Pecis is a more standard library and used babel. We are building community for Pecis and peb.js were already desperated.
+
+**Q:** What is *major browsers*?\
+**A:** Browsers that market share more than one percent.
 
 ## Main Contributor
 [@TechPot-Studio/pecis](https://github.com/orgs/TechPot-Studio/teams/pecis)

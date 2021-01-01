@@ -1,6 +1,6 @@
 function random(): number
 function random(min: number, max: number): number
-function random(min?: number, max?: number) {
+function random(min?: number, max?: number): number {
     if (min === undefined && max === undefined) {
         return Math.random()
     } else {

@@ -1,6 +1,5 @@
 /**
  * Convert HTMLElement to operable element
- * @param {HTMLElement | Node} element
  */
 export default class ElementManager {
     element: HTMLElement | NodeList;
@@ -79,25 +78,8 @@ export default class ElementManager {
         } else {
             this.forEach((eachElement) => {
                 let formElement;
-                // For TypeScript's sake
-                switch (eachElement.constructor) {
-                    case HTMLInputElement:
-                        formElement = eachElement as HTMLInputElement;
-                        break;
-                    case HTMLAudioElement:
-                        formElement = eachElement as HTMLAudioElement;
-                        break;
-                    case HTMLSelectElement:
-                        formElement = eachElement as HTMLSelectElement;
-                        break;
-                    case HTMLTextAreaElement:
-                        formElement = eachElement as HTMLTextAreaElement;
-                        break;
-                    default:
-                        return;
-                }
-
-                formElement.value = newer
+                formElement = eachElement as HTMLInputElement | HTMLAudioElement | HTMLSelectElement | HTMLTextAreaElement;
+                formElement.value = newer;
             });
         }
     }

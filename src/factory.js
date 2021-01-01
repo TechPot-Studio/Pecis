@@ -24,8 +24,8 @@ pecis.MissingParameterError = errors.MissingParameterError;
 pecis.TranslationTable = TranslationTable;
 
 pecis.FIRST_ITEM = 0;
-pecis.GLOBAL = window;
-pecis.UA = window.navigator ? navigator.userAgent : null;
+pecis.GLOBAL = globalThis;
+pecis.UA = globalThis?.navigator?.userAgent || null;
 
 pecis.sum = methods.sum;
 pecis.ajax = methods.ajax;
@@ -45,7 +45,7 @@ pecis.getSearchData = methods.getSearchData;
 pecis.query = methods.query;
 pecis.parse = methods.parse;
 pecis.navigate = methods.navigate;
-pecis.noop = function () {/* NOOP */};
+pecis.noop = () => {/* NOOP */};
 pecis.error = methods.error;
 pecis.upperCase = methods.upperCase;
 pecis.lowerCase = methods.lowerCase;

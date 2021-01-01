@@ -1,4 +1,5 @@
 import haveDocument from '../utils/haveDocument.ts';
+import throwMissingDOMError from '../utils/DOMErrorThrow';
 
 /**
  * Select a element
@@ -8,7 +9,7 @@ export default function query(selector) {
     if (haveDocument()) {
         return document.querySelectorAll(selector);
     } else {
-        return null;
+        throwMissingDOMError();
     }
 
 };

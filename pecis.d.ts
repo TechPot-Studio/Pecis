@@ -74,8 +74,8 @@ declare module 'pecis' {
             text(): string;
             value(newer: string): void;
             val(newer: string): void;
-            bind(type: string, listener: (event?: Event) => void): void;
-            on(type: string, listener: (event?: Event) => void): void;
+            bind(type: string, listener: EventListenerOrEventListenerObject): void;
+            on(type: string, listener: EventListenerOrEventListenerObject): void;
             class(index?: number): DOMSettableTokenList;
             addClass(...tokens: string[]): this;
             removeClass(...tokens: string[]): this;
@@ -85,80 +85,80 @@ declare module 'pecis' {
             show(type?: string): void;
             delete(index?: number): void;
             del(index?: number): void;
-            child(): this;
-            parent(): this;
-            next(): this;
-            prev(): this;
+            child(): ElementManager;
+            parent(): ElementManager;
+            next(): ElementManager;
+            prev(): ElementManager;
             /** Click elements or bind a `click` event listener */
-            click(fn?: Function): void;
+            click(fn?: EventListenerOrEventListenerObject): void;
             /** Focus elements or bind a `focus` event listener */
-            focus(fn?: Function): void;
+            focus(fn?: EventListenerOrEventListenerObject): void;
             /** Bind a `mouseenter` event listener */
-            mouseenter(fn: Function): void;
+            mouseenter(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `mouseleave` event listener */
-            mouseleave(fn: Function): void;
+            mouseleave(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `mouseup` event listener */
-            mouseup(fn: Function): void;
+            mouseup(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `mousedown` event listener */
-            mousedown(fn: Function): void;
+            mousedown(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `mousemove` event listener */
-            mousemove(fn: Function): void;
+            mousemove(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `mouseover` event listener */
-            mouseover(fn: Function): void;
+            mouseover(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `mouseout` event listener */
-            mouseout(fn: Function): void;
+            mouseout(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `mousewheel` event listener */
-            mousewheel(fn: Function): void;
+            mousewheel(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `drag` event listener */
-            drag(fn: Function): void;
+            drag(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `dragstart` event listener */
-            dragstart(fn: Function): void;
+            dragstart(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `dragend` event listener */
-            dragend(fn: Function): void;
+            dragend(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `dragenter` event listener */
-            dragenter(fn: Function): void;
+            dragenter(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `dragexit` event listener */
-            dragexit(fn: Function): void;
+            dragexit(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `dragover` event listener */
-            dragover(fn: Function): void;
+            dragover(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `dragleave` event listener */
-            dragleave(fn: Function): void;
+            dragleave(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `canplay` event listener */
-            canplay(fn: Function): void;
+            canplay(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `canplaythrough` event listener */
-            canplaythrough(fn: Function): void;
+            canplaythrough(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `play` event listener */
-            play(fn: Function): void;
+            play(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `playing` event listener */
-            playing(fn: Function): void;
+            playing(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `copy` event listener */
-            copy(fn: Function): void;
+            copy(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `beforecopy` event listener */
-            beforecopy(fn: Function): void;
+            beforecopy(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `paste` event listener */
-            paste(fn: Function): void;
+            paste(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `beforepaste` event listener */
-            beforepaste(fn: Function): void;
+            beforepaste(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `blur` event listener */
-            blur(fn: Function): void;
+            blur(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `load` event listener */
-            load(fn: Function): void;
+            load(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `loadstart` event listener */
-            loadstart(fn: Function): void;
+            loadstart(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `loadeddata` event listener */
-            loadeddata(fn: Function): void;
+            loadeddata(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `loadedmetadata` event listener */
-            loadedmetadata(fn: Function): void;
+            loadedmetadata(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `focusin` event listener */
-            focusin(fn: Function): void;
+            focusin(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `focusout` event listener */
-            focusout(fn: Function): void;
+            focusout(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `keydown` event listener */
-            keydown(fn: Function): void;
+            keydown(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `keyup` event listener */
-            keyup(fn: Function): void;
+            keyup(fn: EventListenerOrEventListenerObject): void;
             /** Bind a `keypress` event listener */
-            keypress(fn: Function): void;
+            keypress(fn: EventListenerOrEventListenerObject): void;
         }
         function now(): number;
         function stringifyJson(obj: object): string;
