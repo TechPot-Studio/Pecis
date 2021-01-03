@@ -5,7 +5,7 @@ import haveDocument from './haveDocument';
  */
 function defineCustomElement (name: string, constructor: CustomElementConstructor): void {
     if (haveDocument()) {
-        customElements.define(name, constructor)
+        customElements.define(name, constructor);
     }
 }
 
